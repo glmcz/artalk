@@ -4,7 +4,13 @@ if ( function_exists( 'fly_add_image_size' ) ) {
 	fly_add_image_size( 'home_page_square_2x', 1000, 1000, true );
 	fly_add_image_size( 'cropped_top_left', 1000, 1000, array( 'left', 'top' ) );
 }
-require_once('aqua_res.php');
+
+function get_the_content_reformatted ($more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+    $content = get_the_content($more_link_text, $stripteaser, $more_file);
+    $content = apply_filters('the_content', $content);
+    $content = str_replace(range(700,1400), '600', $content);
+    return $content;
+}
 
 add_action( 'after_setup_theme', 'artalk_theme_init', 10 );
 function artalk_theme_init() {

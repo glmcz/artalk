@@ -11,8 +11,9 @@
     <div class="col-md-6 nopadding nomargin" id="featured">
 
         <?php
-            do_action(artalk_feature());
-            //dynamic_sidebar( 'featured-widget' );
+//            do_action(artalk_feature());
+
+//            dynamic_sidebar( 'featured-widget' );
         ?>
 
     </div>

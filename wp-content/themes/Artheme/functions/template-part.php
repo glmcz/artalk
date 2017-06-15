@@ -58,6 +58,7 @@ function artalk_sub_cats() {
     $cats    = get_categories(array('parent'=>$current_cat->term_id));
     $count   = count($cats);
     $classes = 'columns small-6 medium-2';
+
     foreach(  $cats as $cat ) { $i++;
         if ( $count == $i )
             $classes .= ' end';
@@ -67,6 +68,8 @@ function artalk_sub_cats() {
     echo $out;
 }
 add_action ('artalk_service_part','artalk_service_part');
+
+
 function artalk_service_part ($title='',$category='',$class='',$echo=true,$num=6,$col=1,$liClass='')
 {
     // Get the ID of a given category
@@ -108,7 +111,9 @@ function artalk_service_part ($title='',$category='',$class='',$echo=true,$num=6
         return $serContent;
     echo $serContent;
 }
-/* FEATURE POST */
+
+
+/* FEATURE POST big picture on home page*/
 add_action( 'artalk_feature', 'artalk_feature' );
 function artalk_feature() {
     $args = array('posts_per_page' => 1,'post__in'  => get_option( 'sticky_posts' ),'ignore_sticky_posts' => 1 );
@@ -123,7 +128,7 @@ function artalk_feature() {
         $featured .='</div>';
         $featured .='<footer>';
         $featured .= '<span><span class="author-link">'.get_the_author_posts_link().'</span> | <time>'. get_the_time( get_option("date_format"),get_the_ID() ).'<time> | ';
-        $featured .= artalk_post_cats(get_the_ID(), '', false).'</span>';
+//        $featured .= artalk_post_cats(get_the_ID(), '', false).'</span>';
         $featured .='</footer>';
         if( has_post_thumbnail() ){
             $featured .= '<div class="featured-img"><a href="'. get_permalink() .'" />';

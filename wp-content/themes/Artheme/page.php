@@ -11,9 +11,7 @@
         <?php the_content(); ?>
         
         <br /><br />
-        
-       
-        
+
         <?php endwhile; else: ?>
         
             <h3>Sorry, no posts matched your criteria.</h3>
