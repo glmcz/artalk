@@ -1,0 +1,917 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bannerize\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-20 15:35+0100\n"
+"PO-Revision-Date: 2015-03-20 15:35+0100\n"
+"Last-Translator: wpXtreme, Inc. <info@wpxtre.me>\n"
+"Language-Team: wpXtreme, Inc. <info@wpxtre.me>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_nx:1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.7.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../classes/admin/wpxbz-admin.php:60
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:48
+msgid "Preferences"
+msgstr ""
+
+#: ../classes/clicks/wpxbz-click.php:258
+#: ../classes/impressions/wpxbz-impressions.php:260
+msgid "Untitled"
+msgstr ""
+
+#: ../classes/core/wpxbz-ajax.php:83
+#, php-format
+msgid "An error occur when delete %s table"
+msgstr ""
+
+#: ../classes/core/wpxbz-ajax.php:106 ../classes/core/wpxbz-ajax.php:159
+msgid "No banner id set"
+msgstr ""
+
+#: ../classes/core/wpxbz-ajax.php:111 ../classes/core/wpxbz-ajax.php:164
+msgid "No referrer set"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:385
+msgid "External URL"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:386
+msgid "Link when clicked"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:387 ../classes/core/wpxbz-cpt.php:649
+msgid "Add nofollow attribute"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:388 ../classes/core/wpxbz-cpt.php:629
+msgid "Target"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:389
+msgid "Type of banner"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:390
+msgid "Local URL"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:391
+msgid "Custom Width"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:392
+msgid "Custom Height"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:393
+msgid "Mime Type"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:394
+msgid "Date From"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:395
+msgid "Date Expiry"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:396 ../classes/core/wpxbz-cpt.php:640
+msgid "Description"
+msgstr "Descrizione"
+
+#: ../classes/core/wpxbz-banner.php:398
+#: ../classes/widgets/wpxbz-widget.php:319
+msgid "Impressions"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:399
+#: ../classes/widgets/wpxbz-widget.php:320
+msgid "Clicks"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:401
+msgid "Impressions count"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:402
+msgid "Clicks count"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:453 ../classes/core/wpxbz-cpt.php:869
+msgid "Local"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:454 ../classes/core/wpxbz-cpt.php:872
+msgid "Remote"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:455 ../classes/core/wpxbz-cpt.php:875
+msgid "Text"
+msgstr ""
+
+#: ../classes/core/wpxbz-banner.php:1288 ../classes/core/wpxbz-banner.php:1317
+msgid "Error while get Banner"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:83 ../classes/core/wpxbz-cpt.php:95
+msgid "Banners"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:84 ../classes/core/wpxbz-cpt.php:86
+#: ../classes/core/wpxbz-cpt.php:97 ../classes/core/wpxbz-cpt.php:742
+msgid "Banner"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:85 ../classes/widgets/wpxbz-widget.php:37
+msgid "Bannerize"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:87
+msgid "Add New"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:88
+msgid "Add New Banner"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:89
+msgid "Edit Banner"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:90
+msgid "New Banner"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:91
+msgid "View Banner"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:92
+msgid "Search Banner"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:93
+msgid "No Banner found"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:94
+msgid "No Banners found in trash"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:176
+msgid "Show All"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:230
+msgid "Enter Banner name"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:344
+msgid "Thumbnail"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:375
+msgid "No Thumbnail available"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:541 ../classes/core/wpxbz-cpt.php:543
+msgid "Banner Categories"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:542 ../classes/core/wpxbz-cpt.php:544
+msgid "Banner Category"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:545
+msgid "Search Banner Categories"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:546
+msgid "Popular Banner Categories"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:547
+msgid "All Banner Categories"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:548
+msgid "Edit Banner Category"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:549
+msgid "View Banner Category"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:550
+msgid "Update Banner Category"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:551
+msgid "Add New Banner Category"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:552
+msgid "New Banner Category Name"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:553
+msgid "Separate Banner Categories with commas"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:554
+msgid "Add or remove Banner Categories"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:555
+msgid "Choose from the most used Banner Categories"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:615 ../classes/core/wpxbz-cpt.php:879
+msgid "Settings"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:621
+msgid "http://"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:622
+msgid "This is the URL that allows you to link the banner"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:624
+msgid "Link"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:641
+msgid ""
+"Use this field as alternative alt/title description for banner. If you leave "
+"this field blank the title of banner will be use instead."
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:648
+msgid "Add \"nofollow\""
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:657
+msgid "Warning!"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:659
+msgid ""
+"The function <code>getimagesize()</code> is not available. PHP GD Library "
+"are not installed. Please contact your administrator site to fix it."
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:662
+msgid ""
+"You now can insert your custom width and height with measure units. For "
+"example you can use <code>100px</code> or <code>100%</code> or <code>auto</"
+"code>"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:669
+msgid "Custom width"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:670
+msgid "eg: 100%"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:671 ../classes/core/wpxbz-cpt.php:680
+msgid ""
+"Insert size value and measurement. Leave blank to auto get the right size. "
+"Set a unit of measurement. If blank, we'll set pixels."
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:678
+msgid "Custom height"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:679
+msgid "eg: 100px"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:688
+msgid "Enable impressions"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:689
+msgid "Enable impressions count"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:697
+msgid "Enable CTR"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:698
+msgid ""
+"Enable Click-Through Rate count. Remember that this feature works if above "
+"link is set!"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:718
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:120
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:139
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:159
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:177
+msgid "None"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:719
+msgid "_blank"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:720
+msgid "_parent"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:721
+msgid "_self"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:722
+msgid "_top"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:741
+msgid "Click to toogle"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:747 ../classes/core/wpxbz-cpt.php:865
+msgid "Choose a Banner type"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:767
+msgid ""
+"From this panel you can upload a local media (image, Adobe Flash, ...) into "
+"your WordPress installation."
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:773 ../classes/core/wpxbz-cpt.php:775
+msgid "Choose a file"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:774
+msgid "Select"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:781
+msgid "Use this panel to insert a remote URL for your media."
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:784
+msgid "URL"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:797
+msgid ""
+"This is an amazing feature! You can create your own banner with this free "
+"rich text editor."
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:851
+msgid "Overview"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:864
+msgid "From this view you can add your banner adv."
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:866
+msgid "Bannerize allows three type of banners:"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:869
+msgid "choose a media from your Hard Drive"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:872
+msgid "insert an URL of remote resource"
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:875
+msgid "a free rich text where you can insert Javascript, URL, HTML markup, ..."
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:880
+msgid "You can set banner properties and behaviors from your setting panel."
+msgstr ""
+
+#: ../classes/core/wpxbz-cpt.php:881
+msgid "Enjoy"
+msgstr ""
+
+#: ../classes/core/wpxbz-metaboxes.php:22
+msgid "Preview"
+msgstr ""
+
+#: ../classes/core/wpxbz-metaboxes.php:43
+msgid "No preview yet available"
+msgstr ""
+
+#: ../classes/core/wpxbz-metaboxes.php:69
+msgid "Rules"
+msgstr ""
+
+#: ../classes/core/wpxbz-metaboxes.php:83
+msgid "Date range"
+msgstr ""
+
+#: ../classes/core/wpxbz-metaboxes.php:88
+msgid "Date from"
+msgstr ""
+
+#: ../classes/core/wpxbz-metaboxes.php:96
+msgid "Date to"
+msgstr ""
+
+#: ../classes/mime-types/image/wpxbz-mime-type-image.php:106
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:412
+#: ../classes/mime-types/text/wpxbz-mime-type-text.php:68
+msgid "Click to enlarge"
+msgstr ""
+
+#: ../classes/mime-types/image/wpxbz-mime-type-image.php:146
+msgid "Background Color Preview"
+msgstr ""
+
+#: ../classes/mime-types/image/wpxbz-mime-type-image.php:153
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:455
+#: ../classes/mime-types/text/wpxbz-mime-type-text.php:103
+msgid "Type"
+msgstr ""
+
+#: ../classes/mime-types/image/wpxbz-mime-type-image.php:153
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:455
+#: ../classes/mime-types/text/wpxbz-mime-type-text.php:103
+msgid "Size"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:121
+msgid "Window"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:122
+msgid "Direct"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:123
+msgid "Opaque"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:124
+msgid "Transparent"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:125
+msgid "GPU"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:140
+msgid "Low"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:141
+msgid "Auto low"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:142
+msgid "Auto high"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:143
+msgid "Medium"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:144
+msgid "High"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:145
+msgid "Best"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:160
+msgid "Default (Show All)"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:161
+msgid "No border"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:162
+msgid "Exact fit"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:163
+msgid "No scale"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:178
+msgid "Portrait"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:179
+msgid "Landscape"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:226
+msgid "Shockwave Flash"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:246
+msgid "Alternative Image for Flash"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:261
+msgid "Params"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:262
+msgid ""
+"Visit the <a href=\"http://helpx.adobe.com/flash/kb/flash-object-embed-tag-"
+"attributes.html\" target=\"_blank\">Adobe Flash Help</a> to detail."
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:268
+msgid "Play"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:269
+msgid ""
+"Specifies whether a timeline-based SWF file begins playing immediately on "
+"loading in the browser. The default value is ON."
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:277
+msgid "Loop"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:278
+msgid ""
+"Specifies whether a timeline-based SWF file repeats indefinitely or stops "
+"when it reaches the last frame. The default value is ON."
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:286
+msgid "Menu"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:287
+msgid ""
+"Specifies if movie playback controls are available in the Flash Player "
+"context menu. If ON displays a full menu that provides expanded movie "
+"playback controls (for example, Zoom, Quality, Play, Loop, Rewind, Forward, "
+"Back). If OFF displays a menu that hides movie playback controls (for "
+"example, Zoom, Quality, Play, Loop, Rewind, Forward, Back). This attribute "
+"is useful for SWF content that does not rely on the Timeline, such as "
+"content controlled entirely by ActionScript. The short menu includes "
+"\"Settings\" and \"About Flash Player\" menu items."
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:295
+msgid "Allow fullscreen"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:296
+msgid ""
+"Setting this value to true allows the SWF file to enter full screen mode via "
+"ActionScript. The default value is OFF."
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:304
+msgid "Aspect"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:305
+msgid ""
+"Used to control how full screen SWF content appears on mobile devices that "
+"support automatic screen rotation, such as phones and tablets. If this "
+"attribute is specified, Flash Player uses the specified screen orientation "
+"(portrait or landscape) when the SWF is viewed in full screen mode. It does "
+"not matter how the device is oriented. If this attribute is not specified, "
+"orientation of content in full screen mode follows the screen orientation "
+"used by the browser."
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:314
+msgid "Quality"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:315
+msgid "Specifies the display list Stage rendering quality."
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:324
+msgid "Scale"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:325
+msgid ""
+"Specifies how Flash Player scales SWF content to fit the pixel area "
+"specified by the OBJECT or EMBED tag."
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:334
+msgid "Window Mode"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:335
+msgid ""
+"Sets the Window Mode property of the SWF file for transparency, layering, "
+"positioning, and rendering in the browser. If this attribute is omitted, the "
+"default value is \"window\"."
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:340
+msgid ""
+"Use the <strong>Alternative image for Flash</strong> meta box in order to "
+"set an alternative content when Adobe Flash is not available ( eg: mobile )"
+msgstr ""
+
+#: ../classes/mime-types/shockwave-flash/wpxbz-mime-type-shockwave-flash.php:485
+msgid "Adobe Flash not available"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:44
+msgid "General"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:45
+msgid "Layout"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:111
+msgid "Impressions & Clicks"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:118
+msgid "Enable Impressions"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:125
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:144
+msgid ""
+"Warning!! Are you sure you want to delete all data? This operation is not "
+"undoable?"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:129
+#, php-format
+msgid "%s Delete all %s Impressions"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:137
+msgid "Enable Clicks count"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:148
+#, php-format
+msgid "Delete all %s Clicks"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:194
+msgid "CSS inline style"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:199
+msgid "Enable"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:207
+msgid "CSS Style"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:216
+msgid "Custom Editor Preview"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:218
+#, php-format
+msgid "You can use the preview below %s when edit your custom style above %s"
+msgstr ""
+
+#: ../classes/preferences/wpxbz-preferences-viewcontroller.php:225
+msgid "Vertical"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:28
+msgid ""
+"Use this Bannerize widget to display your banner anywhere. Drag & Drop this "
+"widget on your sidebars and setup your preferred settings."
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:287
+msgid "Display"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:293
+msgid "Title"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:296
+msgid "eg: title on top"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:303
+msgid "Numbers"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:307
+msgid "Maximum number of Banners to display: use -1 to display all banners"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:314
+msgid "Order By"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:317
+msgid "Manual"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:318
+msgid "Random"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:321
+msgid "CTR"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:329
+msgid "Rank"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:331
+msgid ""
+"Switch on to give some chances to the banners to be showed when use "
+"Impressions, Click or CTR order by. Switch off to absolute order."
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:338
+msgid "Order"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:340
+msgid "Warning! This param will ignored when RANDOM order by is selected."
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:342
+msgid "Descending"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:343
+msgid "Ascending"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:348
+msgid "Bannerize Categories"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:357
+msgid "Geo Localization"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:366
+msgid "Post Categories"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:375
+msgid "User Roles"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:418
+#: ../classes/widgets/wpxbz-widget.php:476
+#: ../classes/widgets/wpxbz-widget.php:538
+#: ../classes/widgets/wpxbz-widget.php:597
+msgid "Filter"
+msgstr ""
+
+#: ../classes/widgets/wpxbz-widget.php:426
+#: ../classes/widgets/wpxbz-widget.php:484
+#: ../classes/widgets/wpxbz-widget.php:546
+#: ../classes/widgets/wpxbz-widget.php:605
+msgid "Show selected"
+msgstr ""
+
+#: ../kickstart.php:109
+#, php-format
+msgid ""
+"<strong>%s</strong> cannot be used because is not compatible with your "
+"current <strong>WordPress version %s</strong> (<strong>minimum requirement: "
+"%s</strong>)"
+msgstr ""
+
+#: ../kickstart.php:110
+#, php-format
+msgid ""
+"<strong>%s</strong> cannot be used because is not compatible with your "
+"current <strong>PHP language version %s</strong> (<strong>minimum "
+"requirement: %s</strong>)"
+msgstr ""
+
+#: ../kickstart.php:111
+#, php-format
+msgid ""
+"<strong>%s</strong> cannot be used because is not compatible with your "
+"current <strong>MySQL database version %s</strong> (<strong>minimum "
+"requirement: %s</strong>)"
+msgstr ""
+
+#: ../kickstart.php:115
+#, php-format
+msgid ""
+"To continue using <strong>%s</strong>, please upgrade the WordPress version "
+"to the minimum required version."
+msgstr ""
+
+#: ../kickstart.php:116
+#, php-format
+msgid ""
+"To continue using <strong>%s</strong>, please upgrade the PHP language "
+"version to the minimum required version."
+msgstr ""
+
+#: ../kickstart.php:117
+#, php-format
+msgid ""
+"To continue using <strong>%s</strong>, please upgrade the MySQL version to "
+"the minimum required version."
+msgstr ""
+
+#: ../kickstart.php:121
+#, php-format
+msgid ""
+"<strong>%s</strong> cannot be used because is not compatible with your "
+"current <strong>wpXtreme framework version %s</strong> (<strong>minimum "
+"requirement: %s</strong>)"
+msgstr ""
+
+#: ../kickstart.php:122
+#, php-format
+msgid ""
+"To continue using <strong>%s</strong>, please upgrade the wpXtreme framework "
+"version to the minimum required version."
+msgstr ""
+
+#: ../wpx-bannerize.php:319
+msgid "Go to Bannerize Extensions"
+msgstr ""
+
+#: ../wpx-bannerize.php:321
+msgid ""
+"These features are used by Bannerize extensions. If you are reading this "
+"message, Bannerize Analytics extension is missing. Do you need detailed "
+"statistics for your banners? Please install the required extension from WPX "
+"Store."
+msgstr ""
+
+#~ msgid "Placeholders"
+#~ msgstr "Segnaposti"
+
+#~ msgid "Environment"
+#~ msgstr "Ambienti"
+
+#~ msgid "Places"
+#~ msgstr "Posti"
+
+#~ msgid "Status"
+#~ msgstr "Stato"
+
+#~ msgid "Name"
+#~ msgstr "Nome"
+
+#~ msgid "Publish"
+#~ msgstr "Pubblica"
+
+#~ msgid "Trash"
+#~ msgstr "Cestino"
+
+#~ msgid "Edit"
+#~ msgstr "Modifica"
+
+#~ msgid "Restore"
+#~ msgstr "Repristina"
+
+#~ msgid "Delete"
+#~ msgstr "Elimina"
+
+#~ msgid "Icon"
+#~ msgstr "Icona"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Sposta nel cestino"
+
+#~ msgid "Add"
+#~ msgstr "Aggiungi"
+
+#~ msgid "Update"
+#~ msgstr "Aggiorna"
