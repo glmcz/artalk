@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+    <head> 
+        <title> Artalk.cz</title>          
+        <link rel="stylesheet" href="http://localhost/artalk/web/wp-content/themes/Artheme/style.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+        <script>document.documentElement.className = 'doc-not-ready';</script>
+        		<script type="text/javascript">
+		//<![CDATA[
+		var ajaxurl = 'http://localhost/artalk/web/wp-admin/admin-ajax.php';
+		//]]>
+		</script>
+				<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/localhost\/artalk\/web\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.2"}};
+			!function(a,b,c){function d(a){var c,d=b.createElement("canvas"),e=d.getContext&&d.getContext("2d"),f=String.fromCharCode;return e&&e.fillText?(e.textBaseline="top",e.font="600 32px Arial","flag"===a?(e.fillText(f(55356,56806,55356,56826),0,0),d.toDataURL().length>3e3):"diversity"===a?(e.fillText(f(55356,57221),0,0),c=e.getImageData(16,16,1,1).data.toString(),e.fillText(f(55356,57221,55356,57343),0,0),c!==e.getImageData(16,16,1,1).data.toString()):("simple"===a?e.fillText(f(55357,56835),0,0):e.fillText(f(55356,57135),0,0),0!==e.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='open-sans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='http://localhost/artalk/web/wp-includes/css/dashicons.min.css?ver=4.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='admin-bar-css'  href='http://localhost/artalk/web/wp-includes/css/admin-bar.min.css?ver=4.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='debug-bar-css'  href='http://localhost/artalk/web/wp-content/plugins/debug-bar/css/debug-bar.css?ver=20120317' type='text/css' media='all' />
+<link rel='stylesheet' id='debug-bar-codemirror-css'  href='http://localhost/artalk/web/wp-content/plugins/debug-bar-console/codemirror/lib/codemirror.css?ver=2.22' type='text/css' media='all' />
+<link rel='stylesheet' id='debug-bar-console-css'  href='http://localhost/artalk/web/wp-content/plugins/debug-bar-console/css/debug-bar-console.css?ver=20120317' type='text/css' media='all' />
+<script type='text/javascript' src='http://localhost/artalk/web/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://localhost/artalk/web/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://localhost/artalk/web/wp-content/plugins/debug-bar/js/debug-bar.js?ver=20121228.2'></script>
+<script type='text/javascript' src='http://localhost/artalk/web/wp-content/plugins/debug-bar-console/codemirror/debug-bar-codemirror.js?ver=2.22'></script>
+<script type='text/javascript' src='http://localhost/artalk/web/wp-content/plugins/debug-bar-console/js/debug-bar-console.js?ver=20120317'></script>
+<script type='text/javascript' src='http://localhost/artalk/web/wp-content/plugins/debug-bar/js/debug-bar-js.js?ver=20111216'></script>
+<script type='text/javascript' src='http://localhost/artalk/web/wp-content/themes/Artheme/assets/scripts/webfontloader/webfont.js?ver=1.0.23'></script>
+<link rel='https://api.w.org/' href='http://localhost/artalk/web/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost/artalk/web/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://localhost/artalk/web/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.4.2" />
+<style type="text/css" media="print">#wpadminbar { display:none; }</style>
+<style type="text/css" media="screen">
+	html { margin-top: 32px !important; }
+	* html body { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+		* html body { margin-top: 46px !important; }
+	}
+</style>
+        <script>
+		var artalkFontActiveCallback = jQuery.Callbacks();
+		 WebFont.load({
+		     custom: { families: ['SimplonNorm'] },
+		     active: function () { artalkFontActiveCallback.fire(); },
+		 });
+	</script>
+    </head>
+    <body>
+        <div class="row-fluid">
+        <div style="height: 150px">
+                        
+
+        </div>
+        <nav class="navbar-art">
+            <div class="container">
+
+                <div class="navbar-collapse collapse"><ul id="menu-main-menu" class="nav navbar-nav"><li id="menu-item-82989" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-82989"><a href="http://localhost/artalk/web/category/arena/recenze/">Recenze</a></li>
+<li id="menu-item-82990" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-82990"><a href="http://localhost/artalk/web/category/arena/rozhovory/">Rozhovory</a></li>
+<li id="menu-item-82991" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-82991"><a href="http://localhost/artalk/web/category/arena/komentare/">Komentáře</a></li>
+<li id="menu-item-82988" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-82988"><a href="http://localhost/artalk/web/category/artservis/aktuality/">Aktuality</a></li>
+<li id="menu-item-82984" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-82984"><a href="http://localhost/artalk/web/category/artservis/tiskove-zpravy/">Tiskové zprávy</a></li>
+<li id="menu-item-82987" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-82987"><a href="http://localhost/artalk/web/category/artservis/foto-report/">Foto report</a></li>
+<li id="menu-item-82986" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-82986"><a href="http://localhost/artalk/web/category/artservis/media-monitoring/">Media monitoring</a></li>
+<li id="menu-item-82985" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-82985"><a href="http://localhost/artalk/web/category/artservis/doprovodne-programy/">Doprovodné programy</a></li>
+</ul></div>
+            </div>
+        </nav>
+        <div class="container post-container">
+  <div class="row unlimited text-center bg-color-white hide-for-small">
+    <div class="row">
+
+      <div class="columns medium-12 featured-magazine"  id="featured">
+
+        
+          <div class="row medium-collapse featured-magazine-slide slick-active">
+
+                          <div class="columns medium-6">
+                <a class="thumb-link" href="http://localhost/artalk/web/2016/01/08/magidovy-lekce/">
+                  <img width="690" height="440" src="http://localhost/artalk/web/wp-content/uploads/2016/01/magid_v_01-690x440.jpg" class="attachment-featured size-featured wp-post-image" alt="magid_v_01" />                </a>
+              </div>
+            
+            <div class="columns large-6 medium-6">
+                <div class="inner">
+                    <h1 class="article-title main-title"><a href="http://localhost/artalk/web/2016/01/08/magidovy-lekce/" rel="bookmark">Magidovy lekce</a></h1>
+                    <div class="content excerpt">
+                      <p>Autor se zamýšlí nad výstavou Václava Magida v galerii Měsíc ve dne, na níž se podle něj setkáme s produktivní ambivalencí, ale i neproduktivním elitářstvím. <a href="http://artalk.cz/wp-content/uploads/2016/01/magid_v_02.jpg"></a> Českobudějovická galerie při kavárně ...</p>
+                    </div>
+                                    </div>
+            </div>
+          </div>
+
+        
+          <div class="row medium-collapse featured-magazine-slide ">
+
+                          <div class="columns medium-6">
+                <a class="thumb-link" href="http://localhost/artalk/web/2016/01/07/budovani-ceho/">
+                  <img width="690" height="440" src="http://localhost/artalk/web/wp-content/uploads/2016/01/BuS-instalace-30-690x440.jpg" class="attachment-featured size-featured wp-post-image" alt="BuS instalace 30" srcset="http://localhost/artalk/web/wp-content/uploads/2016/01/BuS-instalace-30-690x440.jpg 690w, http://localhost/artalk/web/wp-content/uploads/2016/01/BuS-instalace-30-1380x880.jpg 1380w" sizes="(max-width: 690px) 100vw, 690px" />                </a>
+              </div>
+            
+            <div class="columns large-6 medium-6">
+                <div class="inner">
+                    <h1 class="article-title main-title"><a href="http://localhost/artalk/web/2016/01/07/budovani-ceho/" rel="bookmark">Budování čeho?</a></h1>
+                    <div class="content excerpt">
+                      <p>Na otázku, zda navštívit výstavu Budování státu. Reprezentace Československa v umění, architektuře a designu, kterou &#8211; jakožto výstup výzkumného projektu iniciovaného Vysokou školou uměleckoprůmyslovou v Praze &#8211; prezentuje ...</p>
+                    </div>
+                                    </div>
+            </div>
+          </div>
+
+        
+          <div class="row medium-collapse featured-magazine-slide ">
+
+                          <div class="columns medium-6">
+                <a class="thumb-link" href="http://localhost/artalk/web/2016/01/06/in-fundamine-nejen-o-statni-reprezentaci/">
+                  <img width="690" height="440" src="http://localhost/artalk/web/wp-content/uploads/2016/01/05_Alois-Dryák_univerzita-v-Brně-1926-690x440.jpg" class="attachment-featured size-featured wp-post-image" alt="05_Alois Dryák_univerzita v Brně, 1926" srcset="http://localhost/artalk/web/wp-content/uploads/2016/01/05_Alois-Dryák_univerzita-v-Brně-1926-690x440.jpg 690w, http://localhost/artalk/web/wp-content/uploads/2016/01/05_Alois-Dryák_univerzita-v-Brně-1926-1380x880.jpg 1380w" sizes="(max-width: 690px) 100vw, 690px" />                </a>
+              </div>
+            
+            <div class="columns large-6 medium-6">
+                <div class="inner">
+                    <h1 class="article-title main-title"><a href="http://localhost/artalk/web/2016/01/06/in-fundamine-nejen-o-statni-reprezentaci/" rel="bookmark">In fundamine [nejen o státní reprezentaci]</a></h1>
+                    <div class="content excerpt">
+                      <p>Novoroční příspěvek Ladislava Zikmund-Lendera je komentářem k výstavě <a href="http://ngprague.cz/exposition-detail/budovani-statu-reprezentace-ceskoslovenska-v-umeni-architekture-a-designu/">Budování státu</a> v Národní galerii a společenskému kontextu, v němž vznikla a je představena. Paralelně k tomuto textu publikujeme v ...</p>
+                    </div>
+                                    </div>
+            </div>
+          </div>
+
+        
+          <div class="row medium-collapse featured-magazine-slide ">
+
+                          <div class="columns medium-6">
+                <a class="thumb-link" href="http://localhost/artalk/web/2016/01/15/neni-psani-jako-psani-rozhovor-s-klarou-pelouskovou-a-jirim-ptackem/">
+                  <img width="690" height="440" src="http://localhost/artalk/web/wp-content/uploads/2016/01/CVJ_2015_44-690x440.jpg" class="attachment-featured size-featured wp-post-image" alt="CVJ_2015_44" />                </a>
+              </div>
+            
+            <div class="columns large-6 medium-6">
+                <div class="inner">
+                    <h1 class="article-title main-title"><a href="http://localhost/artalk/web/2016/01/15/neni-psani-jako-psani-rozhovor-s-klarou-pelouskovou-a-jirim-ptackem/" rel="bookmark">Není psaní jako psaní&#8230; Rozhovor s Klárou Pelouškovou a Jiřím Ptáčkem</a></h1>
+                    <div class="content excerpt">
+                      <p>Tento rozhovor vznikl jako součást štafety, kdy má vítěz mladší kategorie minulého ročníku Ceny Věry Jirousové milou příležitost vyzpovídat laureáta nového. Vloni jsme si tak povídaly s Terezou Jindrovou. ...</p>
+                    </div>
+                                    </div>
+            </div>
+          </div>
+
+        
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row unlimited text-center bg-color-white hide-for-small featured-magazine-thumbs" id="featured-thumbs">
+    <div class="row">
+      <div class="columns medium-12 site-margin">
+        <div class="row medium-collapse">
+                                            <div data-slick-goto="0" class="columns medium-3 featured-magazine-thumb  active">
+              <h2 class="article-title"><a href="http://localhost/artalk/web/2016/01/08/magidovy-lekce/">
+                              </a></h2>
+            </div>
+                                  <div data-slick-goto="1" class="columns medium-3 featured-magazine-thumb ">
+              <h2 class="article-title"><a href="http://localhost/artalk/web/2016/01/07/budovani-ceho/">
+                              </a></h2>
+            </div>
+                                  <div data-slick-goto="2" class="columns medium-3 featured-magazine-thumb ">
+              <h2 class="article-title"><a href="http://localhost/artalk/web/2016/01/06/in-fundamine-nejen-o-statni-reprezentaci/">
+                              </a></h2>
+            </div>
+                                  <div data-slick-goto="3" class="columns medium-3 featured-magazine-thumb  end">
+              <h2 class="article-title"><a href="http://localhost/artalk/web/2016/01/15/neni-psani-jako-psani-rozhovor-s-klarou-pelouskovou-a-jirim-ptackem/">
+                              </a></h2>
+            </div>
+                  </div>
+      </div>
+
+    </div>
+
+  </div>
+<div class="row col-md-8 col-sm-6 col-xs-12 noleftpadding">
+
+    
+        <article>
+	<div class="col-md-6 post">
+         	                    <a class="thumb-link" href="http://localhost/artalk/web/2016/01/15/neni-psani-jako-psani-rozhovor-s-klarou-pelouskovou-a-jirim-ptackem/">
+                            <img width="330" height="220" src="http://localhost/artalk/web/wp-content/uploads/2016/01/CVJ_2015_44-470x313.jpg" class="img-responsive wp-post-image" alt="CVJ_2015_44" srcset="http://localhost/artalk/web/wp-content/uploads/2016/01/CVJ_2015_44-470x313.jpg 470w, http://localhost/artalk/web/wp-content/uploads/2016/01/CVJ_2015_44-600x400.jpg 600w, http://localhost/artalk/web/wp-content/uploads/2016/01/CVJ_2015_44-188x125.jpg 188w, http://localhost/artalk/web/wp-content/uploads/2016/01/CVJ_2015_44-225x150.jpg 225w, http://localhost/artalk/web/wp-content/uploads/2016/01/CVJ_2015_44.jpg 800w" sizes="(max-width: 330px) 100vw, 330px" />                    </a>
+                		<header>
+			<h1 class="post-title"><a href="http://localhost/artalk/web/2016/01/15/neni-psani-jako-psani-rozhovor-s-klarou-pelouskovou-a-jirim-ptackem/" rel="bookmark">Není psaní jako psaní&#8230; Rozhovor s Klárou Pelouškovou a Jiřím Ptáčkem</a></h1>
+		</header>
+
+		<div class="content excerpt">
+			<p>Tento rozhovor vznikl jako součást štafety, kdy má vítěz mladší kategorie minulého ročníku Ceny Věry Jirousové milou příležitost &#8230;</p>
+		</div>
+
+		<footer>
+					</footer>
+	</div>
+
+</article>
+
+     
+
+              
+        
+        <article>
+	<div class="col-md-6 post">
+         	                    <a class="thumb-link" href="http://localhost/artalk/web/2016/01/12/kontext-musi-byt-ve-vsem-a-se-vsim/">
+                            <img width="330" height="220" src="http://localhost/artalk/web/wp-content/uploads/2016/01/12-Anna-Vartecká-a-Milota-Havránková-470x313.jpg" class="img-responsive wp-post-image" alt="12 Anna Vartecká a Milota Havránková" srcset="http://localhost/artalk/web/wp-content/uploads/2016/01/12-Anna-Vartecká-a-Milota-Havránková-470x313.jpg 470w, http://localhost/artalk/web/wp-content/uploads/2016/01/12-Anna-Vartecká-a-Milota-Havránková-600x400.jpg 600w, http://localhost/artalk/web/wp-content/uploads/2016/01/12-Anna-Vartecká-a-Milota-Havránková-187x125.jpg 187w, http://localhost/artalk/web/wp-content/uploads/2016/01/12-Anna-Vartecká-a-Milota-Havránková-940x627.jpg 940w, http://localhost/artalk/web/wp-content/uploads/2016/01/12-Anna-Vartecká-a-Milota-Havránková-225x150.jpg 225w, http://localhost/artalk/web/wp-content/uploads/2016/01/12-Anna-Vartecká-a-Milota-Havránková.jpg 1000w" sizes="(max-width: 330px) 100vw, 330px" />                    </a>
+                		<header>
+			<h1 class="post-title"><a href="http://localhost/artalk/web/2016/01/12/kontext-musi-byt-ve-vsem-a-se-vsim/" rel="bookmark">Kontext musí být ve všem a se vším</a></h1>
+		</header>
+
+		<div class="content excerpt">
+			<p>Rozhovor s umělkyní Milotou Havránkovou a kurátorkou Annou Varteckou o právě probíhající výstavě MILOTA v Domě U kamenného zvonu a o &#8230;</p>
+		</div>
+
+		<footer>
+					</footer>
+	</div>
+
+</article>
+
+     
+
+              
+        
+        <article>
+	<div class="col-md-6 post">
+         	                    <a class="thumb-link" href="http://localhost/artalk/web/2016/01/09/knihovnicka-i-love-dick/">
+                            <img width="352" height="220" src="http://localhost/artalk/web/wp-content/uploads/2016/01/Balazova_Kadlcak_Knihovnička_5-470x294.jpg" class="img-responsive wp-post-image" alt="Balazova_Kadlcak_Knihovnička_5" srcset="http://localhost/artalk/web/wp-content/uploads/2016/01/Balazova_Kadlcak_Knihovnička_5-470x294.jpg 470w, http://localhost/artalk/web/wp-content/uploads/2016/01/Balazova_Kadlcak_Knihovnička_5-1060x663.jpg 1060w, http://localhost/artalk/web/wp-content/uploads/2016/01/Balazova_Kadlcak_Knihovnička_5-600x375.jpg 600w, http://localhost/artalk/web/wp-content/uploads/2016/01/Balazova_Kadlcak_Knihovnička_5-200x125.jpg 200w, http://localhost/artalk/web/wp-content/uploads/2016/01/Balazova_Kadlcak_Knihovnička_5-940x588.jpg 940w, http://localhost/artalk/web/wp-content/uploads/2016/01/Balazova_Kadlcak_Knihovnička_5-120x75.jpg 120w, http://localhost/artalk/web/wp-content/uploads/2016/01/Balazova_Kadlcak_Knihovnička_5-240x150.jpg 240w" sizes="(max-width: 352px) 100vw, 352px" />                    </a>
+                		<header>
+			<h1 class="post-title"><a href="http://localhost/artalk/web/2016/01/09/knihovnicka-i-love-dick/" rel="bookmark">Knihovnička: I Love Dick</a></h1>
+		</header>
+
+		<div class="content excerpt">
+			<p>Začínáme druhé kolo Knihovničky s příspěvkem Terezy Stejskalové, která v něm i tentokrát míří poněkud mimo pole výtvarného &#8230;</p>
+		</div>
+
+		<footer>
+					</footer>
+	</div>
+
+</article>
+
+     
+
+              
+        
+        <article>
+	<div class="col-md-6 post">
+         	                    <a class="thumb-link" href="http://localhost/artalk/web/2016/01/08/magidovy-lekce/">
+                            <img width="330" height="220" src="http://localhost/artalk/web/wp-content/uploads/2016/01/magid_v_01-470x313.jpg" class="img-responsive wp-post-image" alt="magid_v_01" srcset="http://localhost/artalk/web/wp-content/uploads/2016/01/magid_v_01-470x313.jpg 470w, http://localhost/artalk/web/wp-content/uploads/2016/01/magid_v_01-600x400.jpg 600w, http://localhost/artalk/web/wp-content/uploads/2016/01/magid_v_01-187x125.jpg 187w, http://localhost/artalk/web/wp-content/uploads/2016/01/magid_v_01-940x627.jpg 940w, http://localhost/artalk/web/wp-content/uploads/2016/01/magid_v_01-225x150.jpg 225w, http://localhost/artalk/web/wp-content/uploads/2016/01/magid_v_01.jpg 1000w" sizes="(max-width: 330px) 100vw, 330px" />                    </a>
+                		<header>
+			<h1 class="post-title"><a href="http://localhost/artalk/web/2016/01/08/magidovy-lekce/" rel="bookmark">Magidovy lekce</a></h1>
+		</header>
+
+		<div class="content excerpt">
+			<p>Autor se zamýšlí nad výstavou Václava Magida v galerii Měsíc ve dne, na níž se podle něj setkáme s produktivní &#8230;</p>
+		</div>
+
+		<footer>
+					</footer>
+	</div>
+
+</article>
+
+     
+
+              
+        
+        <article>
+	<div class="col-md-6 post">
+         	                    <a class="thumb-link" href="http://localhost/artalk/web/2016/01/07/rekurzia-ve-photogether-gallery/">
+                            <img width="330" height="220" src="http://localhost/artalk/web/wp-content/uploads/2016/01/TwD9kOK4ytgzaPULHATJrU3btnwCDXJYY7bot2gu5KA-470x313.jpg" class="img-responsive wp-post-image" alt="TwD9kOK4ytgzaPULHATJrU3btnwCDXJYY7bot2gu5KA" srcset="http://localhost/artalk/web/wp-content/uploads/2016/01/TwD9kOK4ytgzaPULHATJrU3btnwCDXJYY7bot2gu5KA-470x313.jpg 470w, http://localhost/artalk/web/wp-content/uploads/2016/01/TwD9kOK4ytgzaPULHATJrU3btnwCDXJYY7bot2gu5KA-1060x707.jpg 1060w, http://localhost/artalk/web/wp-content/uploads/2016/01/TwD9kOK4ytgzaPULHATJrU3btnwCDXJYY7bot2gu5KA-600x400.jpg 600w, http://localhost/artalk/web/wp-content/uploads/2016/01/TwD9kOK4ytgzaPULHATJrU3btnwCDXJYY7bot2gu5KA-188x125.jpg 188w, http://localhost/artalk/web/wp-content/uploads/2016/01/TwD9kOK4ytgzaPULHATJrU3btnwCDXJYY7bot2gu5KA-940x627.jpg 940w, http://localhost/artalk/web/wp-content/uploads/2016/01/TwD9kOK4ytgzaPULHATJrU3btnwCDXJYY7bot2gu5KA-225x150.jpg 225w, http://localhost/artalk/web/wp-content/uploads/2016/01/TwD9kOK4ytgzaPULHATJrU3btnwCDXJYY7bot2gu5KA.jpg 1200w" sizes="(max-width: 330px) 100vw, 330px" />                    </a>
+                		<header>
+			<h1 class="post-title"><a href="http://localhost/artalk/web/2016/01/07/rekurzia-ve-photogether-gallery/" rel="bookmark">Rekurzia ve Photogether Gallery</a></h1>
+		</header>
+
+		<div class="content excerpt">
+			<p>Dominika Jackuliaková a Barbora Tomíková / Rekurzia / kurátor: Juraj Starovecký / Photogether Gallery / Zlín / 17. 12. &#8230;</p>
+		</div>
+
+		<footer>
+					</footer>
+	</div>
+
+</article>
+
+     
+
+              
+        
+        <article>
+	<div class="col-md-6 post">
+         			<header>
+			<h1 class="post-title"><a href="http://localhost/artalk/web/2016/01/07/denni-tisk-7-1-2015-2/" rel="bookmark">denní tisk 7.1.2015</a></h1>
+		</header>
+
+		<div class="content excerpt">
+			<p>V pražské Leica Gallery jsou vystaveny fotografie Wernera Bischofa (1916–1954), fotožurnalisty a klasika černobílé fotografie. Výstavu v Právu 80 % &#8230;</p>
+		</div>
+
+		<footer>
+					</footer>
+	</div>
+
+</article>
+
+     
+
+              
+        
+    
+<!--    <div class="nav_container">
+      <div class="left"></div>
+      <div class="right"><a href="http://localhost/artalk/web/page/2/" id="next-posts" class="next-posts-link">Next &raquo;</a></div>
+          </div> -->
+ 
+  </div><!--//row-->
+//<div class="col-md-4 col-sm-6">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Archives</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">March 2014</a></li>
+              <li><a href="#">February 2014</a></li>
+              <li><a href="#">January 2014</a></li>
+              <li><a href="#">December 2013</a></li>
+              <li><a href="#">November 2013</a></li>
+              <li><a href="#">October 2013</a></li>
+              <li><a href="#">September 2013</a></li>
+              <li><a href="#">August 2013</a></li>
+              <li><a href="#">July 2013</a></li>
+              <li><a href="#">June 2013</a></li>
+              <li><a href="#">May 2013</a></li>
+              <li><a href="#">April 2013</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div>
+        </div>  
+
+
+//
+  
+  
+
+</div><!--//main_container-->
+	<footer class="site-footer row text-center">
+		<div class="columns small-12 medium-10 large-8 medium-centered">
+						<nav >
+				<div class="menu"><ul><li class="page_item page-item-75260"><a href="http://localhost/artalk/web/autori/">Autoři</a></li><li class="page_item page-item-19452"><a href="http://localhost/artalk/web/dotazy-a-pripominky/">Dotazy a připomínky</a></li><li class="page_item page-item-75262"><a href="http://localhost/artalk/web/e-mail/">E-mail</a></li><li class="page_item page-item-19450"><a href="http://localhost/artalk/web/inzerce/">Inzerce</a></li><li class="page_item page-item-26811"><a href="http://localhost/artalk/web/kustodka-kveta/">Kustodka Květa</a></li><li class="page_item page-item-32769"><a href="http://localhost/artalk/web/newsletter/">Newsletter</a></li><li class="page_item page-item-34819"><a href="http://localhost/artalk/web/test-page/">Test page</a></li><li class="page_item page-item-242"><a href="http://localhost/artalk/web/rozcestnik-galerii/">Galerie</a></li><li class="page_item page-item-250"><a href="http://localhost/artalk/web/webove-stranky-o-umeni/">Odkazy</a></li><li class="page_item page-item-111"><a href="http://localhost/artalk/web/kontakt/">O Artalk.cz</a></li></ul></div>
+			</nav>
+			<div class="copy">
+							</div>
+		</div>
+	</footer>
+
+<script type='text/javascript' src='http://localhost/artalk/web/wp-includes/js/admin-bar.min.js?ver=4.4.2'></script>
+<script type='text/javascript' src='http://localhost/artalk/web/wp-includes/js/wp-embed.min.js?ver=4.4.2'></script>
+	<script type="text/javascript">
+		(function() {
+			var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+			request = true;
+
+			b[c] = b[c].replace( rcs, ' ' );
+			b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+		}());
+	</script>
+			<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Přejít k navigační liště</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar" tabindex="0">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+		<li id="wp-admin-bar-wp-logo" class="menupop"><a class="ab-item"  aria-haspopup="true" href="http://localhost/artalk/web/wp-admin/about.php"><span class="ab-icon"></span><span class="screen-reader-text">O WordPressu</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-default" class="ab-submenu">
+		<li id="wp-admin-bar-about"><a class="ab-item"  href="http://localhost/artalk/web/wp-admin/about.php">O WordPressu</a>		</li></ul><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+		<li id="wp-admin-bar-wporg"><a class="ab-item"  href="https://cs.wordpress.org/">Česká lokalizace</a>		</li>
+		<li id="wp-admin-bar-documentation"><a class="ab-item"  href="https://codex.wordpress.org/">Manuál (anglicky)</a>		</li>
+		<li id="wp-admin-bar-support-forums"><a class="ab-item"  href="http://www.separatista.net/forum/">Fórum podpory (česky)</a>		</li>
+		<li id="wp-admin-bar-feedback"><a class="ab-item"  href="https://cs.wordpress.org/contact/">Kontakt</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-site-name" class="menupop"><a class="ab-item"  aria-haspopup="true" href="http://localhost/artalk/web/wp-admin/">Artalk.cz</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-site-name-default" class="ab-submenu">
+		<li id="wp-admin-bar-dashboard"><a class="ab-item"  href="http://localhost/artalk/web/wp-admin/">Nástěnka</a>		</li></ul><ul id="wp-admin-bar-appearance" class="ab-submenu">
+		<li id="wp-admin-bar-themes"><a class="ab-item"  href="http://localhost/artalk/web/wp-admin/themes.php">Šablony</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-customize" class="hide-if-no-customize"><a class="ab-item"  href="http://localhost/artalk/web/wp-admin/customize.php?url=http%3A%2F%2Flocalhost%2Fartalk%2Fweb%2F">Přizpůsobit</a>		</li>
+		<li id="wp-admin-bar-updates"><a class="ab-item"  href="http://localhost/artalk/web/wp-admin/update-core.php" title="10 aktualizací pluginů, 1 aktualizace šablony"><span class="ab-icon"></span><span class="ab-label">11</span><span class="screen-reader-text">10 aktualizací pluginů, 1 aktualizace šablony</span></a>		</li>
+		<li id="wp-admin-bar-comments"><a class="ab-item"  href="http://localhost/artalk/web/wp-admin/edit-comments.php" title="0 komentářů čeká na schválení"><span class="ab-icon"></span><span id="ab-awaiting-mod" class="ab-label awaiting-mod pending-count count-0">0</span></a>		</li>
+		<li id="wp-admin-bar-new-content" class="menupop"><a class="ab-item"  aria-haspopup="true" href="http://localhost/artalk/web/wp-admin/post-new.php"><span class="ab-icon"></span><span class="ab-label">Akce</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-new-content-default" class="ab-submenu">
+		<li id="wp-admin-bar-new-post"><a class="ab-item"  href="http://localhost/artalk/web/wp-admin/post-new.php">Vytvořit příspěvek</a>		</li>
+		<li id="wp-admin-bar-new-media"><a class="ab-item"  href="http://localhost/artalk/web/wp-admin/media-new.php">Nahrát soubor</a>		</li>
+		<li id="wp-admin-bar-new-page"><a class="ab-item"  href="http://localhost/artalk/web/wp-admin/post-new.php?post_type=page">Vytvořit stránku</a>		</li>
+		<li id="wp-admin-bar-new-user"><a class="ab-item"  href="http://localhost/artalk/web/wp-admin/user-new.php">Vytvořit uživatele</a>		</li></ul></div>		</li></ul><ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
+		<li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="http://localhost/artalk/web/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150" /><label for="adminbar-search" class="screen-reader-text">Hledat</label><input type="submit" class="adminbar-button" value="Hledat"/></form></div>		</li>
+		<li id="wp-admin-bar-my-account" class="menupop"><a class="ab-item"  aria-haspopup="true" href="http://localhost/artalk/web/wp-admin/profile.php">Přihlášený uživatel: </a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-user-actions" class="ab-submenu">
+		<li id="wp-admin-bar-user-info"><a class="ab-item" tabindex="-1" href="http://localhost/artalk/web/wp-admin/profile.php"><span class='display-name'></span><span class='username'>filip.uhlir@teapot.cz</span></a>		</li>
+		<li id="wp-admin-bar-edit-profile"><a class="ab-item"  href="http://localhost/artalk/web/wp-admin/profile.php">Profil</a>		</li>
+		<li id="wp-admin-bar-logout"><a class="ab-item"  href="http://localhost/artalk/web/wp-login.php?action=logout&#038;_wpnonce=2bf46e4c5e">Odhlásit se</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-debug-bar"><div class="ab-item ab-empty-item" >Debug</div>		</li></ul>			</div>
+						<a class="screen-reader-shortcut" href="http://localhost/artalk/web/wp-login.php?action=logout&#038;_wpnonce=2bf46e4c5e">Odhlásit se</a>
+					</div>
+
+			<div id='querylist'>
+
+	<div id="debug-bar-actions">
+		<span class="maximize">+</span>
+		<span class="restore">&ndash;</span>
+		<span class="close">&times;</span>
+	</div>
+
+	<div id='debug-bar-info'>
+		<div id="debug-status">
+			<div id='debug-status-site' class='debug-status'>
+					<div class='debug-status-title'>SPARTACUS</div>
+											<div class='debug-status-data'>#1</div>
+									</div><div id='debug-status-php' class='debug-status'>
+					<div class='debug-status-title'>PHP</div>
+											<div class='debug-status-data'>5.5.12</div>
+									</div><div id='debug-status-db' class='debug-status'>
+					<div class='debug-status-title'>MySQL</div>
+											<div class='debug-status-data'>5.6.17</div>
+									</div><div id='debug-status-memory' class='debug-status'>
+					<div class='debug-status-title'>Memory Usage</div>
+											<div class='debug-status-data'>29 325 896 bytes</div>
+									</div>		</div>
+	</div>
+
+	<div id='debug-bar-menu'>
+		<ul id="debug-menu-links">
+
+				<li><a
+				id="debug-menu-link-Debug_Bar_Request"
+				class="debug-menu-link current"
+				href="#debug-menu-target-Debug_Bar_Request">
+				Request			</a></li>
+						<li><a
+				id="debug-menu-link-Debug_Bar_Object_Cache"
+				class="debug-menu-link"
+				href="#debug-menu-target-Debug_Bar_Object_Cache">
+				Object Cache			</a></li>
+						<li><a
+				id="debug-menu-link-Debug_Bar_JS"
+				class="debug-menu-link"
+				href="#debug-menu-target-Debug_Bar_JS">
+				JavaScript			</a></li>
+						<li><a
+				id="debug-menu-link-Debug_Bar_Console"
+				class="debug-menu-link"
+				href="#debug-menu-target-Debug_Bar_Console">
+				Console			</a></li>
+			
+		</ul>
+	</div>
+
+	<div id="debug-menu-targets">
+		<div id="debug-menu-target-Debug_Bar_Request" class="debug-menu-target"  style="display: block">
+			<div id='debug-bar-request'><h3>Request:</h3><p>None</p><h3>Query String:</h3><p>None</p><h3>Matched Rewrite Rule:</h3><p>None</p><h3>Matched Rewrite Query:</h3><p>None</p></div>		</div>
+
+		
+		<div id="debug-menu-target-Debug_Bar_Object_Cache" class="debug-menu-target" >
+			<div id='object-cache-stats'><p><strong>Cache Hits:</strong> 1362<br /><strong>Cache Misses:</strong> 255<br /></p><ul><li><strong>Group:</strong> options - ( 72.22k )</li><li><strong>Group:</strong> default - ( 0.03k )</li><li><strong>Group:</strong> users - ( 3.68k )</li><li><strong>Group:</strong> userlogins - ( 0.31k )</li><li><strong>Group:</strong> useremail - ( 0.37k )</li><li><strong>Group:</strong> userslugs - ( 0.31k )</li><li><strong>Group:</strong> user_meta - ( 25.09k )</li><li><strong>Group:</strong> posts - ( 418.55k )</li><li><strong>Group:</strong> terms - ( 57.69k )</li><li><strong>Group:</strong> post_tag_relationships - ( 73.03k )</li><li><strong>Group:</strong> category_relationships - ( 33.90k )</li><li><strong>Group:</strong> post_format_relationships - ( 0.58k )</li><li><strong>Group:</strong> post_meta - ( 68.23k )</li><li><strong>Group:</strong> term_meta - ( 0.11k )</li><li><strong>Group:</strong> counts - ( 0.19k )</li></ul></div>		</div>
+
+		
+		<div id="debug-menu-target-Debug_Bar_JS" class="debug-menu-target" >
+			<div id="debug-bar-js"><h2><span>Total Errors:</span><div id='debug-bar-js-error-count'>0</div></h2>
+<ol class="debug-bar-js-list" id="debug-bar-js-errors"></ol>
+</div>		</div>
+
+		
+		<div id="debug-menu-target-Debug_Bar_Console" class="debug-menu-target" >
+					<form id="debug-bar-console" class="debug-bar-console-mode-php">
+		<input id="debug-bar-console-iframe-css" type="hidden"
+			value="http://localhost/artalk/web/wp-content/plugins/debug-bar-console/css/iframe.dev.css" />
+		<input type="hidden" id="_wpnonce_debug_bar_console" name="_wpnonce_debug_bar_console" value="efddb30525" /><input type="hidden" name="_wp_http_referer" value="/artalk/web/" />		<div id="debug-bar-console-wrap">
+			<ul class="debug-bar-console-tabs">
+									<li class="debug-bar-console-tab debug-bar-console-tab-active">
+						PHP						<input type="hidden" value="php" />
+					</li>
+									<li class="debug-bar-console-tab">
+						SQL						<input type="hidden" value="sql" />
+					</li>
+							</ul>
+			<div id="debug-bar-console-submit">
+				<span>Shift + Enter</span>
+				<a href="#">Run</a>
+			</div>
+			<div class="debug-bar-console-panel debug-bar-console-on-php">
+				<textarea id="debug-bar-console-input-php" class="debug-bar-console-input">
+</textarea>
+			</div>
+			<div class="debug-bar-console-panel debug-bar-console-on-sql">
+				<textarea id="debug-bar-console-input-sql" class="debug-bar-console-input"></textarea>
+			</div>
+		</div>
+		<div id="debug-bar-console-output">
+			<strong>Output</strong>
+			<div class="debug-bar-console-panel">
+				<iframe></iframe>
+			</div>
+		</div>
+		</form>
+				</div>
+
+			</div>
+
+		</div>
+</div>
+	
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v2.3";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+</body>
+</html>
+
+
+
