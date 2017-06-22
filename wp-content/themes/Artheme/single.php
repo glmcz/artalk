@@ -1,42 +1,80 @@
 <?php get_header(); ?>    
   
     <div class="row">
+        <article>
+            <div class="col-md-8 no-margin text_width ">
 
-        <div class="col-sm-8">
+                  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                    <h1><?php the_title(); ?></h1>
 
-            <h1><?php the_title(); ?></h1>
+    <!--                --><?php //$var = '600';echo get_the_content_reformatted($var);?>
 
-            <?php $content_width = 600; echo get_the_content_reformatted(); ?>
 
-            <br /><br />
+                            <div class="post-meta-single ">
+         <span><?php the_author_posts_link(); ?></span> | <span><?php the_time( get_option( 'date_format' ) ); ?></span>
+                                <span><?php edit_post_link( 'edit', ' | ' ); ?></span> <span> RECENZE - </span> <span><?php do_action('artalk_post_cats'); ?></span>
+                            </div>
 
-            <?php comments_template(); ?>
+                    <div style="float:right;">
+                    <div class="tags">
+                        <?php
 
-            <?php endwhile; else: ?>
+                        $terms =wp_get_post_tags($post->ID);
+    //                   echo '<p>';
+                        foreach($terms as $term) {
 
-                <h3>Sorry, no posts matched your criteria.</h3>
+    //                            echo $term->name; //the output
+    //                            echo get_tag_link($term->term_id);
+                                echo '<span class="tagbox"><a class="taglink" href="'. get_tag_link($term->term_id) .'">'. $term->name . '</a></span>' . "\n"   ;
+    //                            echo $string .= '<span class="tagbox"><a class="taglink" href="'. get_tag_link($tag->term_id) .'">'. $tag->name . '</a></span>' . "\n"   ;
 
-            <?php endif; ?>
+                        }
+    //                    echo '</p>';
+                     //  the_tags('', '' ,'' ); ?>
+                    </div>
 
-            <div class="clear"></div>
+                    <div class="citate">DIV
 
-        </div>
+                    </div>
+                </div>
+                            <?php echo the_content();?>
 
-        <!--//single_left-->q
-        <?php get_template_part('templates/sidebar', 'single'); ?>
+    <!--	              --><?php
+    //
+    //	              $phrase = get_the_content();
+    //	              // This is where wordpress filters the content text and adds paragraphs
+    //	              $phrase = apply_filters('the_content', $phrase);
+    //	              $replace = '<p style="text-align: left;font-family: Georgia, Times, serif; font-size: 14px; line-height: 22px; color: #1b3d52; font-weight: normal; margin: 15px 0px; font-style: italic;">';
+    //
+    //	              echo str_replace('<strong>', $replace, $phrase);
+    //
+    //	              ?>
+                    <br /><br />
 
-        <div class="clear"></div>
-      
-    </div>
+                    <?php comments_template(); ?>
 
-    
+                    <?php endwhile; else: ?>
 
-    </div>
-    <!--//content-->
-  
-<!--footer-->
+                        <h3>Sorry, no posts matched your criteria.</h3>
+
+                    <?php endif; ?>
+                <div class="clear"></div>
+
+            </div>
+
+            <div class="col-md-4 sidebar_right">
+
+                <!--//single_left-->
+
+                <?php get_template_part('templates/sidebar', 'single'); ?>
+
+                <div class="clear"></div>
+            </div>
+       </article>
+  </div><!--//content-->
+
+
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

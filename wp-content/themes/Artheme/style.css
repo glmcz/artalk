@@ -20,7 +20,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 26.1.2016, 12:05:37
     Author     : Filip Uhlir
 */
@@ -35,7 +35,7 @@ and open the template in the editor.
     Description: Variables for Artheme
 */
 html {
-  font-family: Arial, Helvetica,sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
 
@@ -375,9 +375,15 @@ figure {
 img {
   vertical-align: middle; }
 
-.thumb {
-  width: 350px;
-  height: 200px;
+/*
+Artheme single content
+ */
+.cont p {
+  margin-right: 33.3333%; }
+
+.thumb img {
+  width: 792px;
+  height: 520px;
   max-width: 100%;
   max-height: 100%;
   background-position: 50% 50%;
@@ -395,9 +401,6 @@ img {
 
 .img-rounded {
   border-radius: 6px; }
-
-.attachment-350x200 {
-  margin-bottom: 10px; }
 
 .img-thumbnail {
   display: inline-block;
@@ -2015,14 +2018,153 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 /*
     Artheme post
 */
+/*
+Artheme social button
+ */
+#header_icons img {
+  float: left;
+  height: 32px;
+  width: 32px;
+  margin: 0;
+  margin-left: 10px; }
+
+#header_icons {
+  float: left;
+  padding-top: 5px;
+  width: 195px;
+  z-index: -999;
+  padding-bottom: 10px; }
+
+#header_icons ul {
+  height: 32px;
+  margin: 0px;
+  padding: 0px 0px 0px 0px; }
+
+#header_icons ul li {
+  display: inline;
+  float: left;
+  text-align: left;
+  height: 32px;
+  margin: 0px;
+  padding: 0px;
+  height: 32px; }
+
+/*
+Artheme citate collum
+ */
+.citate {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  width: 31.7%;
+  float: right;
+  background-color: red; }
+
+/*
+Artheme tags
+ */
+.tags a:enabled {
+  content: "";
+  border-bottom: 1px solid white; }
+
+.tags a {
+  color: white;
+  border-left: 1px solid white; }
+
+/*
+Artheme sidebar_right_collumn
+ */
+.sidebar_right {
+  margin-left: -25px; }
+
+div.tags {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 31.7%;
+  width: 200px;
+  background: grey; }
+
+div.citate {
+  height: 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background: green; }
+
+/*
+Artheme author widget
+
+*/
+.widget_single {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.1;
+  width: 100%;
+  display: inline-block;
+  margin: 0px; }
+
+.relatedposts {
+  text-align: left; }
+
+.external_link {
+  width: 100%;
+  display: inline-block;
+  border-bottom: 1px solid black;
+  padding: 5px 5px 5px 10px;
+  color: #000; }
+
+.author_heading {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  margin: 5px 0px 0px 0px; }
+
+.author_name {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left; }
+
+.author_details img {
+  border: 1px solid #D8D8D8;
+  border-radius: 50%;
+  float: left;
+  margin: 0 15px 10px 0; }
+
+.author_details {
+  text-align: initial; }
+
 .post-container {
   background-color: #F9F9F9; }
+
+.text_width p {
+  width: 600px; }
 
 .post-meta li {
   text-transform: uppercase;
   list-style: none; }
 .post-meta .post-categories {
   padding-left: 0; }
+
+.post-meta-single {
+  display: inline-flex;
+  width: 100%; }
+  .post-meta-single span {
+    margin-left: 2px;
+    margin-right: 2px; }
+    .post-meta-single span a {
+      color: black; }
+  .post-meta-single time {
+    margin-left: 5px;
+    margin-right: 5px; }
+  .post-meta-single li {
+    text-transform: uppercase;
+    list-style: none; }
+  .post-meta-single .post-categories {
+    padding-left: 0; }
 
 .post {
   margin-bottom: 24px;
