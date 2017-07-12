@@ -2078,18 +2078,20 @@ Artheme sidebar_right_collumn
   margin-left: -25px; }
 
 div.tags {
+  float: right;
   margin: 0;
   padding: 0;
   display: inline-block;
-  width: 31.7%;
-  width: 200px;
-  background: grey; }
-
-div.citate {
-  height: 15px;
-  margin-top: 10px;
-  margin-right: 10px;
-  background: green; }
+  background: grey;
+}
+.col_9_padding_single_right{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.col_3_padding_single_left{
+  padding-left: 5px;
+  padding-right: 0px;
+}
 
 /*
 Artheme author widget
@@ -2140,8 +2142,6 @@ Artheme author widget
 .post-container {
   background-color: #F9F9F9; }
 
-.text_width p {
-  width: 600px; }
 
 .post-meta li {
   text-transform: uppercase;

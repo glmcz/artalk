@@ -4,7 +4,7 @@
         <article>
             <div class="col-md-8 no-margin text_width ">
 
-                  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
                     <h1><?php the_title(); ?></h1>
 
@@ -16,28 +16,8 @@
                                 <span><?php edit_post_link( 'edit', ' | ' ); ?></span> <span> RECENZE - </span> <span><?php do_action('artalk_post_cats'); ?></span>
                             </div>
 
-                    <div style="float:right;">
-                    <div class="tags">
-                        <?php
 
-                        $terms =wp_get_post_tags($post->ID);
-    //                   echo '<p>';
-                        foreach($terms as $term) {
-
-    //                            echo $term->name; //the output
-    //                            echo get_tag_link($term->term_id);
-                                echo '<span class="tagbox"><a class="taglink" href="'. get_tag_link($term->term_id) .'">'. $term->name . '</a></span>' . "\n"   ;
-    //                            echo $string .= '<span class="tagbox"><a class="taglink" href="'. get_tag_link($tag->term_id) .'">'. $tag->name . '</a></span>' . "\n"   ;
-
-                        }
-    //                    echo '</p>';
-                     //  the_tags('', '' ,'' ); ?>
-                    </div>
-
-                    <div class="citate">DIV
-
-                    </div>
-                </div>
+                <div class="col-md-9 col_9_padding_single_right">
                             <?php echo the_content();?>
 
     <!--	              --><?php
@@ -60,7 +40,26 @@
 
                     <?php endif; ?>
                 <div class="clear"></div>
+                    </div>
+                <div class="col-md-3 col_3_padding_single_left">
+                    <div class="tags">
+		                <?php
 
+		                $terms =wp_get_post_tags($post->ID);
+		                //                   echo '<p>';
+		                foreach($terms as $term) {
+
+			                //                            echo $term->name; //the output
+			                //                            echo get_tag_link($term->term_id);
+			                echo '<span class="tagbox"><a class="taglink" href="'. get_tag_link($term->term_id) .'">'. $term->name . '</a></span>' . "\n"   ;
+			                //                            echo $string .= '<span class="tagbox"><a class="taglink" href="'. get_tag_link($tag->term_id) .'">'. $tag->name . '</a></span>' . "\n"   ;
+
+		                }
+		                //                    echo '</p>';
+		                //  the_tags('', '' ,'' ); ?>
+                    </div>
+
+                </div>
             </div>
 
             <div class="col-md-4 sidebar_right">
