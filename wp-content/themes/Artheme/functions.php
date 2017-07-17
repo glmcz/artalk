@@ -33,6 +33,7 @@ function fb_unautop_4_img( $content ) {
 }
 add_filter( 'the_content', 'fb_unautop_4_img', 99 );
 
+
 //function fb_unautop_references( $content ) {
 //
 //    $content =  preg_replace('<a href="_ftnref">', '<b class="class"> </b>', $content);
@@ -41,14 +42,14 @@ add_filter( 'the_content', 'fb_unautop_4_img', 99 );
 //add_filter( 'the_content', 'fb_unautop_references', 98 );
 
 
-function wpb_tags() {
-    $string = ' ';
-    $wpbtags =  get_tag();
-    foreach ($wpbtags as $tag) {
-        $string .= '<span class="tagbox"><a class="taglink" href="'. get_tag_link($tag->term_id) .'">'. $tag->name . '</a></span>' . "\n"   ;
-    }
-    echo $string;
-
+//function wpb_tags() {
+//	$string  = ' ';
+//	$wpbtags = get_tag();
+//	foreach ( $wpbtags as $tag ) {
+//		$string .= '<span class="tagbox"><a class="taglink" href="' . get_tag_link( $tag->term_id ) . '">' . $tag->name . '</a></span>' . "\n";
+//	}
+//	echo $string;
+//}
 //    $tags = get_the_tag_list();
 //    $html = '<div class="post_tags">';
 //    foreach ( $tags as $tag ) {
@@ -60,9 +61,18 @@ function wpb_tags() {
 //    $html .= '</div>';
 //    echo $html;
 
-}
+//}
 //add_shortcode('wpbtags' , 'wpb_tags' );
 
+function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args)
+{
+	$headers = @get_headers( $args['url'] );
+	if( ! preg_match("|200|", $headers[0] ) ) {
+		return;
+	}
+	return $avatar;
+}
+add_filter('get_avatar','ns_filter_avatar', 10, 6);
 
 function wp_author_info_box() {
     global $post;
@@ -93,7 +103,7 @@ function wp_author_info_box() {
         if ( ! empty( $user_description ) )
 // Author avatar and bio
 
-            $author_details .= '<p class="author_details">' . get_avatar( get_the_author_meta('user_email') , 90 ) . nl2br( $user_description ). '</p>';
+            $author_details .= '<p class="author_details">' . get_avatar( get_the_author_meta('user_email') , 90,'404' ) . nl2br( $user_description ). '</p>';
 
 //        $author_details .= '<p class="author_links"><a href="'. $user_posts .'">View all posts by ' . $display_name . '</a>';
 

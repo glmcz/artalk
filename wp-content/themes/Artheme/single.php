@@ -58,6 +58,9 @@
 		                //                    echo '</p>';
 		                //  the_tags('', '' ,'' ); ?>
                     </div>
+	                <?php
+	                do_action( 'side_matter_list_notes' );
+	                ?>
 
                 </div>
             </div>
