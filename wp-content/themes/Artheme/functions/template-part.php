@@ -142,3 +142,45 @@ function artalk_feature() {
     endwhile;
     wp_reset_query();
 }
+
+/**
+ * Get authors
+ *
+ * @see wp_list_authors()
+ * @param $args Array
+ * @return $authors Array
+ */
+function artalk_get_authors( $args = '' ) {
+    global $wpdb;
+    $defaults = array(
+        'orderby'       => array('post_count' => 'DESC', 'name' => 'ASC'), // irelevant see usort below
+        'number'        => '',
+        'exclude'       => '',
+        'include'       => '',
+        'fields'        => 'all',
+        'hide_empty'    => false,
+    );
+
+    $args = wp_parse_args( $args, $defaults );
+    $query_args = wp_array_slice_assoc( $args, array( 'orderby', 'number', 'exclude', 'include', 'fields' ) );
+    if ( ! $authors = get_users( $query_args ) )
+        return array();
+    $author_count = array();
+    foreach ( (array) $wpdb->get_results( "SELECT DISTINCT post_author, COUNT(ID) AS count FROM $wpdb->posts WHERE " . get_private_posts_cap_sql( 'post' ) . " GROUP BY post_author" ) as $row ) {
+        $author_count[$row->post_author] = $row->count;
+    }
+    foreach ( $authors as $author_index => $author ) {
+        $posts = isset( $author_count[$author->ID] ) ? $author_count[$author->ID] : 0;
+        if ( ! $posts && $args['hide_empty'] ) {
+            unset($authors[$author_index]);
+        }
+    }
+    // sort by last name
+    usort($authors, create_function('$a, $b', 'return strnatcasecmp(remove_accents($a->last_name), remove_accents($b->last_name));'));
+    return $authors;
+}
+function author_letter_line() {
+    foreach (range('A', 'Z') as $char) {
+        echo '<a>'.$char . " ".'</a>';
+    }
+}

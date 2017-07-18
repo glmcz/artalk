@@ -3,7 +3,7 @@
 Theme Name:Artheme2016
 Theme URI: http://www.artalk.cz
 Description: Artheme for artalk
-Author: Filip Uhlíř
+Author: Filip Uhl├ş┼Ö
 Author URI: http://www.teapot.cz
 Tags: 3 column theme, red, blue, magazine
 /*!
@@ -740,7 +740,7 @@ dd {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 10px; }
+  padding: 10px 13px; }
 
 .nav > li.disabled > a {
   color: #777; }
@@ -2078,20 +2078,18 @@ Artheme sidebar_right_collumn
   margin-left: -25px; }
 
 div.tags {
-  float: right;
   margin: 0;
   padding: 0;
   display: inline-block;
-  background: grey;
-}
-.col_9_padding_single_right{
-  padding-right: 0px;
-  padding-left: 0px;
-}
-.col_3_padding_single_left{
-  padding-left: 5px;
-  padding-right: 0px;
-}
+  width: 31.7%;
+  width: 200px;
+  background: grey; }
+
+div.citate {
+  height: 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background: green; }
 
 /*
 Artheme author widget
@@ -2107,7 +2105,7 @@ Artheme author widget
   line-height: 1.1;
   width: 100%;
   display: inline-block;
-  margin: 0px; }
+  margin: 0px 0px 0px 0px; }
 
 .relatedposts {
   text-align: left; }
@@ -2142,6 +2140,8 @@ Artheme author widget
 .post-container {
   background-color: #F9F9F9; }
 
+.text_width p {
+  width: 600px; }
 
 .post-meta li {
   text-transform: uppercase;
@@ -2383,5 +2383,52 @@ Feature Box
 */
 .easy-adverts-out-item img {
   width: 390px; }
+
+/*
+Artheme author list
+
+*/
+.authors-letter-line {
+  background-color: #212121;
+  font-size: 1.8em;
+  color: #fff;
+  display: table;
+  /*width:100%;*/
+  /*TO DO*/
+  width: 1170px; }
+
+.authors-list-row {
+  -moz-column-width: 25em;
+  -webkit-column-width: 25em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em; }
+
+.authors-list-row > .col-md-4 {
+  display: inline-block;
+  padding: .33rem;
+  width: 100%;
+  float: none;
+  border-right: 1px solid #000; }
+
+.authors-letter-line > a {
+  color: #fff;
+  display: table-cell;
+  text-align: center;
+  /*padding-left: 10px;*/ }
+
+.authors-list-single {
+  color: #212121;
+  /*padding-left: 10px;*/ }
+
+authors-list-single-text {
+  text-align: left;
+  color: #212121; }
+
+.authors-list-single-text a {
+  color: #212121; }
+
+.authors-list-single-text H1 {
+  font-size: 1.6em;
+  /*padding-left: 10px;*/ }
 
 /*# sourceMappingURL=style.css.map */

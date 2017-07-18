@@ -103,7 +103,7 @@ function wp_author_info_box() {
         if ( ! empty( $user_description ) )
 // Author avatar and bio
 
-            $author_details .= '<p class="author_details">' . get_avatar( get_the_author_meta('user_email') , 90,'404' ) . nl2br( $user_description ). '</p>';
+            $author_details .= '<p class="author_details">' . get_avatar( get_the_author_meta('user_email') , 90) . nl2br( $user_description ). '</p>';
 
 //        $author_details .= '<p class="author_links"><a href="'. $user_posts .'">View all posts by ' . $display_name . '</a>';
 
