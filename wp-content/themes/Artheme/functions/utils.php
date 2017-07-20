@@ -162,3 +162,96 @@ function feat_get_author( $post_id = 0 ){
     $post = get_post( $post_id );
     return $post->post_author;
 }
+function short_title($after = '', $length) {
+	$mytitle = explode(' ', get_the_title(), $length);
+//	$title = explode(' ', get_the_title(), $length);
+	if (count($mytitle)>=$length) {
+		array_pop($mytitle);
+		$mytitle = implode(" ",$mytitle). $after;
+	} else {
+		$mytitle = implode(" ",$mytitle);
+	}
+	return $mytitle;
+}
+
+
+
+function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args)
+{
+	$headers = @get_headers( $args['url'] );
+	if( ! preg_match("|200|", $headers[0] ) ) {
+		return;
+	}
+	return $avatar;
+}
+add_filter('get_avatar','ns_filter_avatar', 10, 6);
+
+
+
+
+//function get_the_content_reformatted ($var, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+//	$content = get_the_content($more_link_text, $stripteaser, $more_file);
+//	$content = apply_filters('the_content', $content);
+//	$content = str_replace(range(700,1400), $var, $content);
+//	return $content;
+//}
+
+// regex pokusy
+
+//add_filter('the_content', 'add_image_responsive_class');
+//function filter_images($content){
+//	return preg_replace('/<img (.*) \/>\s*/iU', '<span class="className"><b><img \1 /></b></span>', $content);
+//}
+//
+//add_filter('the_content', 'filter_images');
+//function filter_p($content){
+//    return preg_replace('/<p>\s*/iU', '<span class="class"> </span>', $content);
+//}
+//
+//add_filter('the_content', 'filter_p');
+
+//function insert_inline_style( $content = null ){
+//
+//	if( null === $content )
+//		return $content;
+//
+//	return str_replace( '<p>', '<p style="color:red;width: 200px;">', $content );
+//
+//}
+//add_filter( 'the_content', 'insert_inline_style', 10, 1 );
+
+
+function add_image_responsive_class($content) {
+	global $post;
+	$pattern ="/<img(.*?)class=\"(.*?)\"(.*?)>/i";
+	$replacement = '<img$1class="$2 img-responsive"$3>';
+	$content = preg_replace($pattern, $replacement, $content);
+	return $content;
+}
+function fb_unautop_4_img( $content ) {
+
+	$content = preg_replace(
+		'/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s',
+		'<figure class="thumb">$1</figure>',
+		$content
+	);
+
+	return $content;
+}
+add_filter( 'the_content', 'fb_unautop_4_img', 99 );
+
+function remove_comment_fields($fields) {
+	unset($fields['comment-notes']);
+	return $fields;
+}
+add_filter('comment_form_default_fields','remove_comment_fields');
+
+//function fb_unautop_references( $content ) {
+//
+//    $content =  preg_replace('<a href="_ftnref">', '<b class="class"> </b>', $content);
+//    return $content;
+//}
+//add_filter( 'the_content', 'fb_unautop_references', 98 );
+
+// end regex pokus;
+
