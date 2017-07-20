@@ -3,7 +3,7 @@
 Theme Name:Artheme2016
 Theme URI: http://www.artalk.cz
 Description: Artheme for artalk
-Author: Filip Uhl├ş┼Ö
+Author: Filip Uhlíř
 Author URI: http://www.teapot.cz
 Tags: 3 column theme, red, blue, magazine
 /*!
@@ -740,7 +740,7 @@ dd {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 13px; }
+  padding: 10px 10px; }
 
 .nav > li.disabled > a {
   color: #777; }
@@ -2049,28 +2049,113 @@ Artheme social button
   padding: 0px;
   height: 32px; }
 
+/* Single page layout */
+.no-margin {
+  padding-left: 0px; }
+
+.col_9_padding_single_right {
+  padding-right: 10px;
+  padding-left: 0px; }
+
+.col_9_padding_single_right img {
+  height: auto;
+  max-width: 134%;
+  padding-bottom: 1em;
+  padding-top: 1em; }
+
+.no-padding-left {
+  padding-left: 0px; }
+
+/* Artheme comments */
+.links time {
+  color: black; }
+
+.comment-reply-link {
+  color: black; }
+
+/* Highlight active form field */
+#respond input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid #DDDDDD; }
+
+#comment {
+  width: 100%; }
+
+#email-notes {
+  display: none; }
+
+#reply-title {
+  background-color: lightgrey;
+  padding: 5px;
+  margin-bottom: 50px;
+  font-size: small; }
+
+.comment-reply-title {
+  background-color: grey;
+  padding: 5px;
+  margin-bottom: 50px; }
+
+.comment-respond {
+  padding: 0px; }
+
+.comment-notes {
+  display: none; }
+
+.comment-form-comment label {
+  display: none; }
+
+.form-submit .submit {
+  width: 31%; }
+
+#respond .comment-form-author label,
+#respond .comment-form-email label,
+#respond .comment-form-url label,
+#respond .comment-form-age label {
+  background: #eee;
+  -webkit-box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
+  -moz-box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
+  box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
+  color: #555;
+  display: inline-block;
+  font-size: 13px;
+  left: 4px;
+  min-width: 60px;
+  padding: 4px 10px;
+  position: relative;
+  top: 40px;
+  z-index: 1; }
+
+.comments-area {
+  padding-left: 0px; }
+
+.comments-title {
+  background-color: black;
+  color: white; }
+
+.comments-title p {
+  padding: 5px; }
+
+.commented-list {
+  list-style-type: none;
+  margin-top: 20px;
+  border-bottom: 1px solid black; }
+
+.commented-list:last-child {
+  border-bottom: none; }
+
 /*
 Artheme citate collum
  */
-.citate {
-  margin: 0;
-  padding: 0;
-  display: inline;
-  width: 31.7%;
-  float: right;
-  background-color: red; }
+.col_3_padding_single_left {
+  padding-left: 0px; }
 
 /*
 Artheme tags
  */
-.tags a:enabled {
-  content: "";
-  border-bottom: 1px solid white; }
-
-.tags a {
-  color: white;
-  border-left: 1px solid white; }
-
 /*
 Artheme sidebar_right_collumn
  */
@@ -2081,15 +2166,13 @@ div.tags {
   margin: 0;
   padding: 0;
   display: inline-block;
-  width: 31.7%;
-  width: 200px;
+  width: 100%;
   background: grey; }
 
-div.citate {
-  height: 15px;
-  margin-top: 10px;
-  margin-right: 10px;
-  background: green; }
+.tags a {
+  color: white;
+  border-left: 1px solid white;
+  padding-left: 1px; }
 
 /*
 Artheme author widget
@@ -2140,9 +2223,6 @@ Artheme author widget
 .post-container {
   background-color: #F9F9F9; }
 
-.text_width p {
-  width: 600px; }
-
 .post-meta li {
   text-transform: uppercase;
   list-style: none; }
@@ -2168,7 +2248,7 @@ Artheme author widget
 
 .post {
   margin-bottom: 24px;
-  height: 400px;
+  min-height: 367px;
   border-bottom: 1px solid #212121; }
   .post footer a {
     color: #212121; }
@@ -2226,7 +2306,7 @@ Artheme author widget
     Magazine
 */
 .magazine {
-  height: 540px;
+  min-height: 540px;
   border-bottom: 1px solid black; }
   .magazine .service {
     height: 100%; }
@@ -2272,7 +2352,7 @@ Artheme author widget
 .service-b-tz li, .service-b-dp li, .service-b-mm li, .service-b-top li {
   border-bottom: 1px solid black;
   padding: 10px;
-  height: 4.2em; }
+  min-height: 4.5em; }
   .service-b-tz li a, .service-b-dp li a, .service-b-mm li a, .service-b-top li a {
     display: block;
     color: #212121; }
@@ -2384,10 +2464,7 @@ Feature Box
 .easy-adverts-out-item img {
   width: 390px; }
 
-/*
-Artheme author list
-
-*/
+/* Artheme author list */
 .authors-letter-line {
   background-color: #212121;
   font-size: 1.8em;

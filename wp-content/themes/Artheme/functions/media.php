@@ -1,13 +1,13 @@
 <?php
 
-  $set_post_thumbnail_size = true;
-  $add_retina_sizes        = true;
-  $retina_appendix         = '-retina';
+$set_post_thumbnail_size = true;
+$add_retina_sizes        = true;
+$retina_appendix         = '-retina';
 
-  add_theme_support('post-thumbnails');
-  add_theme_support( 'html5', array( 'gallery', 'caption' ) );
+add_theme_support('post-thumbnails');
+add_theme_support( 'html5', array( 'gallery', 'caption' ) );
 
-  $sizes = array(
+$sizes = array(
     'thumbnail' => array(350, 220, true),    // grid thumbnails, gallery thumbs, footer feat, b-square feat
     'medium'    => array(470, 440, false),   // photoreport feat, comics
     'large'     => array(1060, 1060, false), // fullsize in post, gallery lightbox
@@ -15,83 +15,83 @@
     'featured'  => array(600, 400, true),    // featured image
     'logo'      => array(175, 75, false),    // partners
     'freport'   => array(250, 150, true),  // Cropped to Fotoreport
-  );
+);
 
-  // Register image sizes, eventually with retina support
-  foreach ($sizes as $name => $atts) {
+// Register image sizes, eventually with retina support
+foreach ($sizes as $name => $atts) {
     $width  = $atts[0];
     $height = $atts[1];
     $crop   = $atts[2] ? array('center','center') : false;
     add_image_size( $name, $width, $height, $crop );
     if ( $add_retina_sizes ) {
-      add_image_size( $name.$retina_appendix, $width*2, $height*2, $crop );
+        add_image_size( $name.$retina_appendix, $width*2, $height*2, $crop );
     }
-  }
+}
 
-  if ( $set_post_thumbnail_size ) {
+if ( $set_post_thumbnail_size ) {
     set_post_thumbnail_size( $sizes['thumbnail'][0], $sizes['thumbnail'][1], $sizes['thumbnail'][2] );
-  }
+}
 
 
-  // Remove paragraphs from around the images and image links inserted into post content
-  // @see http://wordpress.stackexchange.com/a/8356/2110
-  add_filter('the_content', 'artalk_unautop_images');
-  function artalk_unautop_images($content) {
+// Remove paragraphs from around the images and image links inserted into post content
+// @see http://wordpress.stackexchange.com/a/8356/2110
+add_filter('the_content', 'artalk_unautop_images');
+function artalk_unautop_images($content) {
 
-      // do a regular expression replace:
-      // find all p tags that have just
-      // <p>, maybe white space, maybe link, <img all stuff up to >, maybe link end, maybe whitespace </p>
-      // replace it with just the image tag...
-      // wrap in div
-      $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .*>)\s*(<\/a>)?\s*<\/p>/iU', '<div class="full-width">'.'\1\2\3'.'</div>', $content);
+    // do a regular expression replace:
+    // find all p tags that have just
+    // <p>, maybe white space, maybe link, <imgResize all stuff up to >, maybe link end, maybe whitespace </p>
+    // replace it with just the image tag...
+    // wrap in div
+    $content = preg_replace('/<p>\s*(<a .*>)?\s*(<imgResize .*>)\s*(<\/a>)?\s*<\/p>/iU', '<div class="full-width">'.'\1\2\3'.'</div>', $content);
 
-      // Add class to the image link
-      // Replaced with the div wrap above
-      // $content = preg_replace('/<a (.*)>\s*<img/iU', '<a class="full-width" '.'\1'.'><img', $content);
+    // Add class to the image link
+    // Replaced with the div wrap above
+    // $content = preg_replace('/<a (.*)>\s*<imgResize/iU', '<a class="full-width" '.'\1'.'><imgResize', $content);
 
-      return $content;
-  }
-
-
+    return $content;
+}
 
 
-  /* Featured image fallback */
-  add_filter( 'post_thumbnail_html', 'artalk_thumbnail_fallback', 99, 5 );
-  function artalk_thumbnail_fallback($html='', $post_id=null, $post_thumbnail_id=null, $size='post-thumbnail', $attr='') {
+
+
+/* Featured image fallback */
+add_filter( 'post_thumbnail_html', 'artalk_thumbnail_fallback', 99, 5 );
+function artalk_thumbnail_fallback($html='', $post_id=null, $post_thumbnail_id=null, $size='post-thumbnail', $attr='') {
     // Return unchanged if not empty
     if ( ! empty($html) )
-      return $html;
+        return $html;
     // Try getting an image from attached images
     if ( $attachments = get_posts('posts_per_page=1&post_type=attachmet&post_parent='.$post_id) )
-      return wp_get_attachment_image($attachments[0]->ID,$size,false,$attr);
-    // Try getting a (possibly remote) image by parsing the content for img tags
+        return wp_get_attachment_image($attachments[0]->ID,$size,false,$attr);
+    // Try getting a (possibly remote) image by parsing the content for imgResize tags
     if ( ! $post = get_post($post_id) )
-      return '';
-    if ( $img = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches) )
-      return '<img class="attachment-thumbnail wp-post-image" src="'.$matches[1][0].'" alt="'.esc_attr($post->post_title).'" />';
-  }
+        return '';
+    if ( $img = preg_match_all('/<imgResize.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches) )
+        return '<imgResize class="attachment-thumbnail wp-post-image" src="'.$matches[1][0].'" alt="'.esc_attr($post->post_title).'" />';
+}
 
 
-  /**
-   * Custom gallery output
-   *
-   */
-  add_filter( 'post_gallery', 'artalk_post_gallery', 10, 2 );
-  function artalk_post_gallery($output, $attr) {
+/**
+ * Custom gallery output
+ *
+ */
+add_filter( 'post_gallery', 'artalk_post_gallery', 10, 2 );
+function artalk_post_gallery($output, $attr) {
 
     if ( ! is_single() )
-      return $output;
+        return $output;
     $post = get_post();
     static $instance = 0;
     $instance++;
 
     $html5 = current_theme_supports( 'html5', 'gallery' );
     $atts = shortcode_atts( array(
-      'order'      => 'ASC',
-      'orderby'    => 'menu_order ID',
-      'id'         => $post ? $post->ID : 0,
-      'include'    => '',
-      'exclude'    => '',
+        'order'      => 'ASC',
+        'orderby'    => 'menu_order ID',
+        'id'         => $post ? $post->ID : 0,
+        'include'    => '',
+        'exclude'    => '',
     ), $attr, 'gallery' );
 
     // thumbnails size
@@ -100,28 +100,28 @@
     $id = intval( $atts['id'] );
 
     if ( ! empty( $atts['include'] ) ) {
-      $_attachments = get_posts( array( 'include' => $atts['include'], 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $atts['order'], 'orderby' => $atts['orderby'] ) );
+        $_attachments = get_posts( array( 'include' => $atts['include'], 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $atts['order'], 'orderby' => $atts['orderby'] ) );
 
-      $attachments = array();
-      foreach ( $_attachments as $key => $val ) {
-        $attachments[$val->ID] = $_attachments[$key];
-      }
+        $attachments = array();
+        foreach ( $_attachments as $key => $val ) {
+            $attachments[$val->ID] = $_attachments[$key];
+        }
     } elseif ( ! empty( $atts['exclude'] ) ) {
-      $attachments = get_children( array( 'post_parent' => $id, 'exclude' => $atts['exclude'], 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $atts['order'], 'orderby' => $atts['orderby'] ) );
+        $attachments = get_children( array( 'post_parent' => $id, 'exclude' => $atts['exclude'], 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $atts['order'], 'orderby' => $atts['orderby'] ) );
     } else {
-      $attachments = get_children( array( 'post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $atts['order'], 'orderby' => $atts['orderby'] ) );
+        $attachments = get_children( array( 'post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $atts['order'], 'orderby' => $atts['orderby'] ) );
     }
 
     if ( empty( $attachments ) ) {
-      return '';
+        return '';
     }
 
     if ( is_feed() ) {
-      $output = "\n";
-      foreach ( $attachments as $att_id => $attachment ) {
-        $output .= wp_get_attachment_link( $att_id, $size, true ) . "\n";
-      }
-      return $output;
+        $output = "\n";
+        foreach ( $attachments as $att_id => $attachment ) {
+            $output .= wp_get_attachment_link( $att_id, $size, true ) . "\n";
+        }
+        return $output;
     }
 
     $selector   = "gallery-{$instance}";
@@ -132,46 +132,46 @@
     $attachments_count = count($attachments);
 
     foreach ( $attachments as $id => $attachment ) {
-      if ( $i < 4 ) {
-        $thumbnails .= "
+        if ( $i < 4 ) {
+            $thumbnails .= "
           <div class='gallery-thumbnail columns small-6'>
             ".wp_get_attachment_image( $id, $size, false )."
           </div>
         ";
-      }
-      $image_data   = wp_get_attachment_image_src($id,'large',false);
-      $image_class  = $image_data['2'] > $image_data['1'] ? 'portrait' : 'landscape';
-      $image_src    = esc_url($image_data[0]);
-      $active_class = $i ? '':'active';
+        }
+        $image_data   = wp_get_attachment_image_src($id,'large',false);
+        $image_class  = $image_data['2'] > $image_data['1'] ? 'portrait' : 'landscape';
+        $image_src    = esc_url($image_data[0]);
+        $active_class = $i ? '':'active';
 
-      $image_alt = trim(strip_tags( get_post_meta($id, '_wp_attachment_image_alt', true) )); // try alt field first
-      if ( empty($image_alt) ) // if not, use the caption
-        $image_alt = trim(strip_tags( $attachment->post_excerpt ));
-      if ( empty($image_alt) ) // finally, use the title
-        $image_alt = trim(strip_tags( $attachment->post_title ));
+        $image_alt = trim(strip_tags( get_post_meta($id, '_wp_attachment_image_alt', true) )); // try alt field first
+        if ( empty($image_alt) ) // if not, use the caption
+            $image_alt = trim(strip_tags( $attachment->post_excerpt ));
+        if ( empty($image_alt) ) // finally, use the title
+            $image_alt = trim(strip_tags( $attachment->post_title ));
 
-      $image_aria = trim( $attachment->post_excerpt ) ? "aria-describedby='$selector-$id'" : '';
+        $image_aria = trim( $attachment->post_excerpt ) ? "aria-describedby='$selector-$id'" : '';
 
-      // @todo remove spinner and error mesagge from the loop
-      // @todo consider using html5 figure
-      $slides .= "
+        // @todo remove spinner and error mesagge from the loop
+        // @todo consider using html5 figure
+        $slides .= "
         <div class='gallery-slide $active_class'>
-          <img class='centered-both $image_class' data-lazy='$image_src' alt='$image_alt' $image_aria>
+          <imgResize class='centered-both $image_class' data-lazy='$image_src' alt='$image_alt' $image_aria>
           <div class='spinner centered-both'></div>
-          <span class='gallery-img-err-msg centered-both'>
+          <span class='gallery-imgResize-err-msg centered-both'>
             ".esc_html__('nelze načíst :(','artalk')."
             </span>
         </div>
       ";
-      // @todo don't output caption at all if empty?
-      // if ( trim($attachment->post_excerpt) ) { ...
-      $captions .= "
+        // @todo don't output caption at all if empty?
+        // if ( trim($attachment->post_excerpt) ) { ...
+        $captions .= "
         <div class='gallery-caption $active_class' data-gallery-caption='$i' id='$selector-$id'>
           ".wptexturize($attachment->post_excerpt)."
         </div>
       ";
 
-      $i++;
+        $i++;
     } // @endof foreach $attachments
 
     $output = "
@@ -214,4 +214,4 @@
     ";
 
     return $output;
-  }
+}

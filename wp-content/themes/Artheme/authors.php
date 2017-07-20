@@ -15,8 +15,6 @@ get_header();
     <?php author_letter_line();?>
 </div>
 
-
-
 		<div class="authors-list-row">
 
 			<?php foreach( artalk_get_authors() as $author ) : ?>

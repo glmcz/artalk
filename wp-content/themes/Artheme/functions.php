@@ -33,6 +33,11 @@ function fb_unautop_4_img( $content ) {
 }
 add_filter( 'the_content', 'fb_unautop_4_img', 99 );
 
+function remove_comment_fields($fields) {
+	unset($fields['comment-notes']);
+	return $fields;
+}
+add_filter('comment_form_default_fields','remove_comment_fields');
 
 //function fb_unautop_references( $content ) {
 //

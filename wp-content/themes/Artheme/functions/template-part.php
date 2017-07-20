@@ -32,10 +32,10 @@ function artalk_post_cats( $post_id=null, $args='', $echo=true ) {
             continue;
         $pre = '';
         //if ( $parent = get_category_parents($cat->parent,'category',false,' &raquo; ') ) {
-         //   $pre = $parent.' &mdash; ';
-/*            if ($parent) {
-                $pre = '<a href="'.esc_url(get_term_link($parent)).'">'.$parent->name.'</a> &mdash; ';
-            }*/
+        //   $pre = $parent.' &mdash; ';
+        /*            if ($parent) {
+                        $pre = '<a href="'.esc_url(get_term_link($parent)).'">'.$parent->name.'</a> &mdash; ';
+                    }*/
         //}
         $cats_out[] = '<li>'.$pre.'<a href="'.esc_url(get_term_link($cat)).'">'.$cat->name.'</a></li>';
     }
@@ -58,7 +58,6 @@ function artalk_sub_cats() {
     $cats    = get_categories(array('parent'=>$current_cat->term_id));
     $count   = count($cats);
     $classes = 'columns small-6 medium-2';
-
     foreach(  $cats as $cat ) { $i++;
         if ( $count == $i )
             $classes .= ' end';
@@ -68,8 +67,6 @@ function artalk_sub_cats() {
     echo $out;
 }
 add_action ('artalk_service_part','artalk_service_part');
-
-
 function artalk_service_part ($title='',$category='',$class='',$echo=true,$num=6,$col=1,$liClass='')
 {
     // Get the ID of a given category
@@ -78,18 +75,18 @@ function artalk_service_part ($title='',$category='',$class='',$echo=true,$num=6
     // Get the URL of this category
     $category_link = get_category_link( $category_id );
 
-/*    var_dump(is_category(2));
-    if ( ! is_category($category))
-    {
-        if ( ! $echo )
-            return 'neplatná kategorie';
-        echo 'neplatná kategorie';
-        return;
-    }*/
+    /*    var_dump(is_category(2));
+        if ( ! is_category($category))
+        {
+            if ( ! $echo )
+                return 'neplatná kategorie';
+            echo 'neplatná kategorie';
+            return;
+        }*/
 
     $serContent = '<div class="'.$class.'">';
     $serContent .= '<div class="s-header"><a href="'.$category_link.'"><h5>'.$title.'</h5></a></div>';
-    $serContent .= '<ul>';
+    $serContent .= '<ul class="row">';
 
     $QArgsActual = array( 'category_name' => $category,'posts_per_page' => $num );
     query_posts($QArgsActual);
@@ -111,9 +108,7 @@ function artalk_service_part ($title='',$category='',$class='',$echo=true,$num=6
         return $serContent;
     echo $serContent;
 }
-
-
-/* FEATURE POST big picture on home page*/
+/* FEATURE POST */
 add_action( 'artalk_feature', 'artalk_feature' );
 function artalk_feature() {
     $args = array('posts_per_page' => 1,'post__in'  => get_option( 'sticky_posts' ),'ignore_sticky_posts' => 1 );
@@ -128,8 +123,9 @@ function artalk_feature() {
         $featured .='</div>';
         $featured .='<footer>';
         $featured .= '<span><span class="author-link">'.get_the_author_posts_link().'</span> | <time>'. get_the_time( get_option("date_format"),get_the_ID() ).'<time> | ';
-//        $featured .= artalk_post_cats(get_the_ID(), '', false).'</span>';
+        $featured .= artalk_post_cats(get_the_ID(), '', false).'</span>';
         $featured .='</footer>';
+        echo "ss";
         if( has_post_thumbnail() ){
             $featured .= '<div class="featured-img"><a href="'. get_permalink() .'" />';
             $featured .= get_the_post_thumbnail(get_the_ID(),'featured',array( 'class' => 'img-responsive' ));
@@ -143,44 +139,60 @@ function artalk_feature() {
     wp_reset_query();
 }
 
-/**
- * Get authors
- *
- * @see wp_list_authors()
- * @param $args Array
- * @return $authors Array
- */
-function artalk_get_authors( $args = '' ) {
-    global $wpdb;
-    $defaults = array(
-        'orderby'       => array('post_count' => 'DESC', 'name' => 'ASC'), // irelevant see usort below
-        'number'        => '',
-        'exclude'       => '',
-        'include'       => '',
-        'fields'        => 'all',
-        'hide_empty'    => false,
-    );
+/* Comments template       */
+if ( ! function_exists( 'fws_comment' ) ) :
+	function fws_comment( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
+		switch ( $comment->comment_type ) :
+			case 'pingback' :
+			case 'trackback' :
+				// Display trackbacks differently than normal comments.
+				?>
+				<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+				<p><?php _e( 'Pingback:', 'fws' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'fws' ), '<span class="edit-link">', '</span>' ); ?></p>
+				<?php
+				break;
+			default :
+				// Proceed with normal comments.
+				global $post;
+				?>
+				<li class="commented-list" id="li-comment-<?php comment_ID(); ?>">
+					<article id="comment-<?php comment_ID(); ?>" class="row">
+						<header class="col-md-3">
+							<?php
+							echo get_avatar( $comment, 44 );
+							printf( '<cite class="fn">%1$s %2$s</cite>',
+								get_comment_author_link(),
+								// If current post author is also comment author, make it known visually.
+								( $comment->user_id === $post->post_author ) ? '<span> ' . __( '(Post author) ', 'fws' ) . '</span>' : ''
+							);
 
-    $args = wp_parse_args( $args, $defaults );
-    $query_args = wp_array_slice_assoc( $args, array( 'orderby', 'number', 'exclude', 'include', 'fields' ) );
-    if ( ! $authors = get_users( $query_args ) )
-        return array();
-    $author_count = array();
-    foreach ( (array) $wpdb->get_results( "SELECT DISTINCT post_author, COUNT(ID) AS count FROM $wpdb->posts WHERE " . get_private_posts_cap_sql( 'post' ) . " GROUP BY post_author" ) as $row ) {
-        $author_count[$row->post_author] = $row->count;
-    }
-    foreach ( $authors as $author_index => $author ) {
-        $posts = isset( $author_count[$author->ID] ) ? $author_count[$author->ID] : 0;
-        if ( ! $posts && $args['hide_empty'] ) {
-            unset($authors[$author_index]);
-        }
-    }
-    // sort by last name
-    usort($authors, create_function('$a, $b', 'return strnatcasecmp(remove_accents($a->last_name), remove_accents($b->last_name));'));
-    return $authors;
-}
-function author_letter_line() {
-    foreach (range('A', 'Z') as $char) {
-        echo '<a>'.$char . " ".'</a>';
-    }
-}
+							?>
+						</header><!-- .comment-meta -->
+
+						<?php if ( '0' == $comment->comment_approved ) : ?>
+							<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'fws' ); ?></p>
+						<?php endif; ?>
+
+						<section class="col-md-6">
+							<?php
+							printf( '<a class="links"href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+								esc_url( get_comment_link( $comment->comment_ID ) ),
+								get_comment_time( 'c' ),
+								/* translators: 1: date, 2: time */
+								sprintf( __( '%1$s ( %2$s  )', 'fws' ), get_comment_date(), get_comment_time() )
+							);
+							comment_text(); ?>
+							<?php edit_comment_link( __( 'Edit', 'fws' ), '<p class="edit-link">', '</p>' ); ?>
+						</section><!-- .comment-content -->
+
+						<div class="col-md-3">
+							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'odpovědět', 'fws' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+						</div><!-- .reply -->
+					</article><!-- #comment-## -->
+				</li>
+				<?php
+				break;
+		endswitch; // end comment_type check
+	}
+endif;
