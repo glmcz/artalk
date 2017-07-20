@@ -160,7 +160,7 @@ if ( ! function_exists( 'fws_comment' ) ) :
 					<article id="comment-<?php comment_ID(); ?>" class="row">
 						<header class="col-md-3">
 							<?php
-							echo get_avatar( $comment, 44 );
+//
 							printf( '<cite class="fn">%1$s %2$s</cite>',
 								get_comment_author_link(),
 								// If current post author is also comment author, make it known visually.

@@ -2111,6 +2111,9 @@ Artheme social button
 .form-submit .submit {
   width: 31%; }
 
+.commentlist {
+  padding-left: 0px; }
+
 #respond .comment-form-author label,
 #respond .comment-form-email label,
 #respond .comment-form-url label,
@@ -2412,6 +2415,10 @@ Sidebar
     padding-bottom: 5px; }
   .side-recent-item .twice-sm {
     height: 48px; }
+
+/* Media artalk service part */
+.media_li {
+  padding: 10px 10px 10px 0px; }
 
 /*
 Utils

@@ -8,7 +8,7 @@
 ?>
 <div class="nopadding nomargin" id="service-bottom">
     <div class="col-md-6 noleftpadding service-b-mm" id="b-mm">
-        <?php  do_action(artalk_service_part('Monitoring médií','Media monitoring','s-b-mm',true,5)) ?>
+        <?php  do_action(artalk_service_part('Monitoring médií','Media monitoring','s-b-mm',true,5,1,'media_li')) ?>
     </div>
     <div class="col-md-6 noleftpadding service-b-top" id="b-top">
         <?php  do_action(artalk_service_part('Doprovodné programy','Doprovodné programy','s-b-dp',true,5)) ?>

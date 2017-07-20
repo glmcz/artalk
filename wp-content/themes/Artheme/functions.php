@@ -79,6 +79,30 @@ function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args)
 }
 add_filter('get_avatar','ns_filter_avatar', 10, 6);
 
+function get_related_author_posts() {
+	global $authordata, $post;
+
+	$authors_posts = get_posts( array( 'author' => $authordata->ID, 'post__not_in' => array( $post->ID ), 'posts_per_page' => 5 ) );
+
+	$output = "";
+	foreach ( $authors_posts as $authors_post ) {
+		$output .= '<a class="external_link" href="' . get_permalink( $authors_post->ID ) . '">' . apply_filters( 'the_title', $authors_post->post_title, $authors_post->ID ) . '</a>';
+	}
+	return $output;
+}
+
+function short_title($after = '', $length) {
+	$mytitle = explode(' ', get_the_title(), $length);
+	$title = explode(' ', get_the_title(), $length);
+	if (count($mytitle)>=$length) {
+		array_pop($mytitle);
+		$mytitle = implode(" ",$mytitle). $after;
+	} else {
+		$mytitle = implode(" ",$title);
+	}
+	return $mytitle;
+}
+
 function wp_author_info_box() {
     global $post;
 
@@ -126,15 +150,16 @@ function wp_author_info_box() {
 // Pass all this info to post content
 
        echo ' <footer class="author_bio_section" >' . $author_details . '</footer>';
-        echo '<a class="widget_single" href="'. $user_posts .'">Další články autora</a>';
-     global $query_string;
-    query_posts( $query_string . '&posts_per_page=5' );
 
-    while (have_posts()) : the_post();
-    ?>
-    <a class="external_link" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-    <?php
-    endwhile;
+//        echo '<a class="widget_single" href="'. $user_posts .'">Další články autora</a>';
+//     global $query_string;
+//    query_posts( $query_string . '&posts_per_page=5' );
+
+//    while (have_posts()) : the_post();
+//    ?>
+<!--    <a class="external_link" href="--><?php //the_permalink() ?><!--">--><?php //the_title(); ?><!--</a>-->
+<!--    --><?php
+//    endwhile;
 
 
 

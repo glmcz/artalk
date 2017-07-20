@@ -2514,6 +2514,9 @@ Artheme social button
   width: 31%;
 
 }
+.commentlist{
+  padding-left: 0px;
+}
 //#respond input[type=text]:focus, textarea:focus {
 //  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 //  margin: 0px 1px 3px 0px;
@@ -2988,6 +2991,11 @@ Sidebar
   .twice-sm {
     height: $liHeight / 2;
   }
+}
+
+/* Media artalk service part */
+.media_li{
+  padding: 10px 10px 10px 0px;
 }
 
 /*
