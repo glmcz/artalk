@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="col-md-3 col_3_padding_single_left">
-                    <div class="tags">
+                    <div class="single-tags-container">
 						<?php
 
 						$terms =wp_get_post_tags($post->ID);
@@ -61,7 +61,7 @@
 
 							//                            echo $term->name; //the output
 							//                            echo get_tag_link($term->term_id);
-							echo '<span class="tagbox"><a class="taglink" href="'. get_tag_link($term->term_id) .'">'. $term->name . '</a></span>' . "\n"   ;
+							echo '<span class="single-tags-tag"><a class="taglink" href="'. get_tag_link($term->term_id) .'">'. $term->name . '</a></span>';
 							//                            echo $string .= '<span class="tagbox"><a class="taglink" href="'. get_tag_link($tag->term_id) .'">'. $tag->name . '</a></span>' . "\n"   ;
 
 						}

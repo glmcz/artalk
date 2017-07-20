@@ -3,7 +3,7 @@
 Theme Name:Artheme2016
 Theme URI: http://www.artalk.cz
 Description: Artheme for artalk
-Author: Filip Uhlíř
+Author: Filip Uhl├ş┼Ö
 Author URI: http://www.teapot.cz
 Tags: 3 column theme, red, blue, magazine
 /*!
@@ -2514,5 +2514,32 @@ authors-list-single-text {
 .authors-list-single-text H1 {
   font-size: 1.6em;
   /*padding-left: 10px;*/ }
+
+.single-tags-container {
+  background-color: #D1D1D1; }
+
+.single-tags-tag {
+  color: #212121;
+  display: inline-block;
+  background-color: #D1D1D1;
+  border-left: 1px solid #F9F9F9;
+  font-size: 12px;
+  padding: 8px 6px 4px 6px; }
+
+.single-tags-tag:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid #F9F9F9;
+  margin-top: 16px; }
+
+.single-tags-tag a {
+  color: #212121;
+  line-height: 1em; }
+
+.single-tags-tag a:hover {
+  color: #fb026a; }
 
 /*# sourceMappingURL=style.css.map */

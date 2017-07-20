@@ -3114,3 +3114,30 @@ authors-list-single-text {
   font-size: 1.6em;
   /*padding-left: 10px;*/
 }
+.single-tags-container {
+  background-color: #D1D1D1;
+}
+.single-tags-tag {
+  color: $ArtBlack;
+  display: inline-block;
+  background-color: #D1D1D1;
+  border-left: 1px solid $ArtInnerColor;
+  font-size: 12px;
+  padding: 8px 6px 4px 6px;
+}
+.single-tags-tag:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid $ArtInnerColor;
+    margin-top: 16px;
+}
+.single-tags-tag a {
+  color: $ArtBlack;
+  line-height: 1em;
+}
+.single-tags-tag a:hover {
+  color: $ArtPink;
+}
