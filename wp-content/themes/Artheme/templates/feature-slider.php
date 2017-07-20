@@ -3,7 +3,7 @@
 
         <?php foreach ( $featured as $post ) : setup_postdata( $post ); $i++; ?>
         <?php if ( $has_thumbnail = has_post_thumbnail() ) : ?>
-            
+
 
             <?php the_post_thumbnail('featured'); ?>
               <div class="columns medium-6">
