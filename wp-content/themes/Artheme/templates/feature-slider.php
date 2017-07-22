@@ -3,7 +3,7 @@
 
         <?php foreach ( $featured as $post ) : setup_postdata( $post ); $i++; ?>
         <?php if ( $has_thumbnail = has_post_thumbnail() ) : ?>
-            
+
 
             <?php the_post_thumbnail('featured'); ?>
               <div class="columns medium-6">
@@ -15,7 +15,7 @@
 
             <div class="columns large-6 <?php echo $has_thumbnail ? 'medium-6':'medium-8 medium-centered'; ?>">
                 <div class="inner">
-                    <h1 class="article-title main-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title() ?></a></h1>
+                    <h3 class="article-title main-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title() ?></a></h3>
                     <div class="content excerpt">
                       <?php echo artalk_get_the_excerpt($post->ID, 28); ?>
                     </div>

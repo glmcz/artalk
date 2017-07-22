@@ -2049,28 +2049,147 @@ Artheme social button
   padding: 0px;
   height: 32px; }
 
+/* Single page layout */
+.no-margin {
+  padding-left: 0px; }
+
+.col_9_padding_single_right {
+  padding-right: 10px;
+  padding-left: 0px; }
+
+.col_9_padding_single_right img {
+  height: auto;
+  max-width: 134%;
+  min-width: 134%;
+  padding-bottom: 1em;
+  padding-top: 1em; }
+
+.wp-caption {
+  border: 1px solid #ddd;
+  text-align: center;
+  background-color: #f3f3f3;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  width: none; }
+
+.wp-caption img {
+  margin: 0;
+  border: 0 none;
+  padding-left: 0px;
+  padding-right: 0px;
+  min-height: 500px; }
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  padding: 0 4px 5px;
+  margin: 0; }
+
+.no-padding-left {
+  padding-left: 0px; }
+
+/* Artheme comments */
+.comment_author_bio {
+  padding-left: 5px;
+  list-style-type: none; }
+
+.comment_author_bio li a {
+  color: black; }
+
+.links time {
+  color: black; }
+
+.comment-reply-link {
+  color: black; }
+
+/* Highlight active form field */
+#respond input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid #DDDDDD; }
+
+#comment {
+  width: 100%; }
+
+#email-notes {
+  display: none; }
+
+#reply-title {
+  background-color: lightgrey;
+  padding: 5px;
+  margin-bottom: 50px;
+  font-size: small; }
+
+.comment-reply-title {
+  background-color: grey;
+  padding: 5px;
+  margin-bottom: 50px; }
+
+.comment-respond {
+  padding: 0px; }
+
+.comment-notes {
+  display: none; }
+
+.comment-form-comment label {
+  display: none; }
+
+.form-submit .submit {
+  width: 31%; }
+
+.commentlist {
+  padding-left: 0px; }
+
+#respond .comment-form-author label,
+#respond .comment-form-email label,
+#respond .comment-form-url label,
+#respond .comment-form-age label {
+  background: #eee;
+  -webkit-box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
+  -moz-box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
+  box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
+  color: #555;
+  display: inline-block;
+  font-size: 13px;
+  left: 4px;
+  min-width: 60px;
+  padding: 4px 10px;
+  position: relative;
+  top: 40px;
+  z-index: 1; }
+
+.comments-area {
+  padding-left: 0px; }
+
+.comments-title {
+  background-color: black;
+  color: white; }
+
+.comments-title p {
+  padding: 5px; }
+
+.commented-list {
+  list-style-type: none;
+  margin-top: 20px;
+  border-bottom: 1px solid black; }
+
+.commented-list:last-child {
+  border-bottom: none; }
+
 /*
 Artheme citate collum
  */
-.citate {
-  margin: 0;
-  padding: 0;
-  display: inline;
-  width: 31.7%;
-  float: right;
-  background-color: red; }
+.col_3_padding_single_left {
+  padding-left: 0px; }
 
 /*
 Artheme tags
  */
-.tags a:enabled {
-  content: "";
-  border-bottom: 1px solid white; }
-
-.tags a {
-  color: white;
-  border-left: 1px solid white; }
-
 /*
 Artheme sidebar_right_collumn
  */
@@ -2078,20 +2197,16 @@ Artheme sidebar_right_collumn
   margin-left: -25px; }
 
 div.tags {
-  float: right;
   margin: 0;
   padding: 0;
   display: inline-block;
-  background: grey;
-}
-.col_9_padding_single_right{
-  padding-right: 0px;
-  padding-left: 0px;
-}
-.col_3_padding_single_left{
-  padding-left: 5px;
-  padding-right: 0px;
-}
+  width: 100%;
+  background: grey; }
+
+.tags a {
+  color: white;
+  border-left: 1px solid white;
+  padding-left: 1px; }
 
 /*
 Artheme author widget
@@ -2107,7 +2222,7 @@ Artheme author widget
   line-height: 1.1;
   width: 100%;
   display: inline-block;
-  margin: 0px; }
+  margin: 0px 0px 0px 0px; }
 
 .relatedposts {
   text-align: left; }
@@ -2142,7 +2257,6 @@ Artheme author widget
 .post-container {
   background-color: #F9F9F9; }
 
-
 .post-meta li {
   text-transform: uppercase;
   list-style: none; }
@@ -2168,10 +2282,13 @@ Artheme author widget
 
 .post {
   margin-bottom: 24px;
-  height: 400px;
+  min-height: 367px;
   border-bottom: 1px solid #212121; }
   .post footer a {
     color: #212121; }
+
+.image_container {
+  padding-bottom: 10px; }
 
 .post-title {
   line-height: 1;
@@ -2226,7 +2343,7 @@ Artheme author widget
     Magazine
 */
 .magazine {
-  height: 540px;
+  min-height: 540px;
   border-bottom: 1px solid black; }
   .magazine .service {
     height: 100%; }
@@ -2272,7 +2389,7 @@ Artheme author widget
 .service-b-tz li, .service-b-dp li, .service-b-mm li, .service-b-top li {
   border-bottom: 1px solid black;
   padding: 10px;
-  height: 4.2em; }
+  min-height: 4.5em; }
   .service-b-tz li a, .service-b-dp li a, .service-b-mm li a, .service-b-top li a {
     display: block;
     color: #212121; }
@@ -2333,6 +2450,10 @@ Sidebar
   .side-recent-item .twice-sm {
     height: 48px; }
 
+/* Media artalk service part */
+.media_li a {
+  padding: 10px 10px 10px 0px; }
+
 /*
 Utils
 */
@@ -2367,6 +2488,17 @@ Feature Box
     height: 100%;
     display: block; }
 
+.responsive {
+  padding-left: 0px;
+  padding-right: 0px;
+  min-height: 500px; }
+
+.article-title {
+  padding-top: 10px; }
+
+.article-title a {
+  color: #212121; }
+
 .focuswp-content h2 {
   font-size: 28px; }
 .focuswp-content .post-meta {
@@ -2383,5 +2515,49 @@ Feature Box
 */
 .easy-adverts-out-item img {
   width: 390px; }
+
+/* Artheme author list */
+.authors-letter-line {
+  background-color: #212121;
+  font-size: 1.8em;
+  color: #fff;
+  display: table;
+  /*width:100%;*/
+  /*TO DO*/
+  width: 1170px; }
+
+.authors-list-row {
+  -moz-column-width: 25em;
+  -webkit-column-width: 25em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em; }
+
+.authors-list-row > .col-md-4 {
+  display: inline-block;
+  padding: .33rem;
+  width: 100%;
+  float: none;
+  border-right: 1px solid #000; }
+
+.authors-letter-line > a {
+  color: #fff;
+  display: table-cell;
+  text-align: center;
+  /*padding-left: 10px;*/ }
+
+.authors-list-single {
+  color: #212121;
+  /*padding-left: 10px;*/ }
+
+authors-list-single-text {
+  text-align: left;
+  color: #212121; }
+
+.authors-list-single-text a {
+  color: #212121; }
+
+.authors-list-single-text H1 {
+  font-size: 1.6em;
+  /*padding-left: 10px;*/ }
 
 /*# sourceMappingURL=style.css.map */

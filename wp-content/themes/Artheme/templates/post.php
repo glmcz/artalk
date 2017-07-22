@@ -1,5 +1,5 @@
 <article>
-	<div class="col-md-6 post-container">
+	<div class="col-md-6 col-sm-6 post-container">
         <div class="post">
             <header>
                 <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title() ?></a></h2>

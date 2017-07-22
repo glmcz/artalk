@@ -1,176 +1,97 @@
 <?php
 
-
-//function get_the_content_reformatted ($var, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
-//	$content = get_the_content($more_link_text, $stripteaser, $more_file);
-//	$content = apply_filters('the_content', $content);
-//	$content = str_replace(range(700,1400), $var, $content);
-//	return $content;
-//}
-
-//add_action( 'init', 'wpse34528_add_page_cats' );
-//function wpse34528_add_page_cats(){
-//    register_taxonomy_for_object_type('post_tag', 'single');
-//    register_taxonomy_for_object_type('category', 'single');
-//}
-
-function add_image_responsive_class($content) {
-	global $post;
-	$pattern ="/<img(.*?)class=\"(.*?)\"(.*?)>/i";
-	$replacement = '<img$1class="$2 img-responsive"$3>';
-	$content = preg_replace($pattern, $replacement, $content);
-	return $content;
-}
-function fb_unautop_4_img( $content ) {
-
-    $content = preg_replace(
-        '/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s',
-        '<figure class="thumb">$1</figure>',
-        $content
-    );
-
-    return $content;
-}
-add_filter( 'the_content', 'fb_unautop_4_img', 99 );
-
-
-//function fb_unautop_references( $content ) {
+//function getImage() {
+//    global $more;
+//    $more = 1;
+//    $link = get_permalink();
+//    $content = get_the_content();
+//    $count = substr_count($content, '<img');
 //
-//    $content =  preg_replace('<a href="_ftnref">', '<b class="class"> </b>', $content);
-//    return $content;
-//}
-//add_filter( 'the_content', 'fb_unautop_references', 98 );
-
-
-//function wpb_tags() {
-//	$string  = ' ';
-//	$wpbtags = get_tag();
-//	foreach ( $wpbtags as $tag ) {
-//		$string .= '<span class="tagbox"><a class="taglink" href="' . get_tag_link( $tag->term_id ) . '">' . $tag->name . '</a></span>' . "\n";
-//	}
-//	echo $string;
-//}
-//    $tags = get_the_tag_list();
-//    $html = '<div class="post_tags">';
-//    foreach ( $tags as $tag ) {
-//        $tag_link = get_tag_link( $tag->term_id );
-//
-//        $html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-//        $html .= "{$tag->name}</a>";
+//    for($i=1;$i<=$count;$i++) {
+//	    //move $start = 0 inside the loop
+//	    $start = 0;
+//	    $imgBeg = strpos($content, '<img', $start);
+//	    $post = substr($content, $imgBeg);
+//	    $imgEnd = strpos($post, '>');
+//	    $postOutput = substr($post, 0, $imgEnd+1);
+//	    $postOutput = preg_replace('/width="([0-9]*)" height="([0-9]*)"/', 'width="136%" height="400px"',$postOutput);;
+//	    if(stristr($postOutput,'<img')) { echo $postOutput; }
+//	    $content = substr($content,$imgEnd+1);
 //    }
-//    $html .= '</div>';
-//    echo $html;
-
+//    $more = 0;
 //}
-//add_shortcode('wpbtags' , 'wpb_tags' );
-
-function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args)
-{
-	$headers = @get_headers( $args['url'] );
-	if( ! preg_match("|200|", $headers[0] ) ) {
-		return;
-	}
-	return $avatar;
-}
-add_filter('get_avatar','ns_filter_avatar', 10, 6);
-
-function wp_author_info_box() {
-    global $post;
-
-// Detect if it is a single post with a post author
-    if ( is_single() && isset( $post->post_author ) ) {
-
-// Get author's display name
-        $display_name = get_the_author_meta( 'display_name', $post->post_author );
-
-// If display name is not available then use nickname as display name
-        if ( empty( $display_name ) )
-            $display_name = get_the_author_meta( 'nickname', $post->post_author );
-
-// Get author's biographical information or description
-        $user_description = get_the_author_meta( 'user_description', $post->post_author );
-
-// Get author's website URL
-        $user_website = get_the_author_meta('url', $post->post_author);
-
-// Get link to the author archive page
-        $user_posts = get_author_posts_url( get_the_author_meta( 'ID' , $post->post_author));
-
-        if ( ! empty( $display_name ) )
-
-            $author_details = '<p class="author_heading">Autor</p><p class="author_name">' . $display_name . '</p>';
-
-        if ( ! empty( $user_description ) )
-// Author avatar and bio
-
-            $author_details .= '<p class="author_details">' . get_avatar( get_the_author_meta('user_email') , 90,'404' ) . nl2br( $user_description ). '</p>';
-
-//        $author_details .= '<p class="author_links"><a href="'. $user_posts .'">View all posts by ' . $display_name . '</a>';
-
-// Check if author has a website in their profile
-        if ( ! empty( $user_website ) ) {
-
-// Display author website link
-            $author_details .= ' | <a href="' . $user_website .'" target="_blank" rel="nofollow">Website</a></p>';
-
-        } else {
-// if there is no author website then just close the paragraph
-            $author_details .= '</p>';
-        }
-
-// Pass all this info to post content
-
-       echo ' <footer class="author_bio_section" >' . $author_details . '</footer>';
-        echo '<a class="widget_single" href="'. $user_posts .'">Další články autora</a>';
-     global $query_string;
-    query_posts( $query_string . '&posts_per_page=5' );
-
-    while (have_posts()) : the_post();
-    ?>
-    <a class="external_link" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-    <?php
-    endwhile;
+//add_filter( 'img_caption_shortcode', 'cleaner_caption', 10, 3 );
 
 
-
-    }
-
-}
-
-
-
-
-
-
-//add_filter('the_content', 'add_image_responsive_class');
-//function filter_images($content){
-//	return preg_replace('/<img (.*) \/>\s*/iU', '<span class="className"><b><img \1 /></b></span>', $content);
-//}
+//size-full
+//add_image_size('size-full', 600, 300, true);
+//function cleaner_caption( $output, $attr, $content ) {
 //
-//add_filter('the_content', 'filter_images');
-//function filter_p($content){
-//    return preg_replace('/<p>\s*/iU', '<span class="class"> </span>', $content);
-//}
+//	/* We're not worried abut captions in feeds, so just return the output here. */
+//	if ( is_feed() )
+//		return $output;
 //
-//add_filter('the_content', 'filter_p');
-
-//function insert_inline_style( $content = null ){
+//	/* Set up the default arguments. */
+//	$defaults = array(
+//		'id' => '',
+//		'align' => 'alignnone',
+//		'width' => '200',
+//		'caption' => ''
 //
-//	if( null === $content )
+//	);
+//
+//	/* Merge the defaults with user input. */
+//	$attr = shortcode_atts( $defaults, $attr );
+//
+//	/* If the width is less than 1 or there is no caption, return the content wrapped between the [caption]< tags. */
+//	if ( 1 > $attr['width'] || empty( $attr['caption'] ) )
 //		return $content;
 //
-//	return str_replace( '<p>', '<p style="color:red;width: 200px;">', $content );
+//	/* Set up the attributes for the caption <div>. */
+//	$attributes = ( !empty( $attr['id'] ) ? ' id="' . esc_attr( $attr['id'] ) . '"' : '' );
+//	$attributes .= ' class="wp-caption ' . esc_attr( $attr['align'] ) . '"';
+//	$attributes .= ' style="width: ' . esc_attr( $attr['width'] ) . 'px"';
 //
+//	/* Open the caption <div>. */
+//	$output = '<div' . $attributes .'>';
+//
+//	/* Allow shortcodes for the content the caption was created for. */
+//	$output .= do_shortcode( $content );
+//
+//	/* Append the caption text. */
+//	$output .= '<p class="wp-caption-text">' . $attr['caption'] . '</p>';
+//
+//	/* Close the caption </div>. */
+//	$output .= '</div>';
+//
+//	/* Return the formatted, clean caption. */
+//	return $output;
 //}
-//add_filter( 'the_content', 'insert_inline_style', 10, 1 );
 
-if ( ! isset( $content_width ) ) {
-    $content_width = 400;
-}
-
-include ('aqua_res.php');
+//function my_image_replacement($the_content) {
+//	global $post;
+//	if (has_post_thumbnail()) {
+//		$the_content = get_the_post_thumbnail($post->ID, 'my-custom-image-size');
+//		// other stuff as necessary
+//	}
+//
+//	return $the_content;
+//}
+//add_filter('the_content', 'my_image_replacement', 11);
+include_once ('simple_html_dom.php');
+add_image_size('lrg-hdr', 1170, 544, true);
+add_image_size('med-hdr', 750, 400, true);
+add_image_size('sml-hdr', 500, 325, true);
 add_action( 'after_setup_theme', 'artalk_theme_init', 10 );
+
+function get_the_content_with_formatting ($more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+	$content = get_the_content($more_link_text, $stripteaser, $more_file);
+	$content = apply_filters('the_content', $content);
+	$content = str_replace(']]>', ']]&gt;', $content);
+	return $content;
+}
 function artalk_theme_init() {
+
 
 	/* INIT */
 	include_once('functions/init.php');

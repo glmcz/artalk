@@ -9,7 +9,7 @@
 
 
 <div class="col-md-6 service nopadding nomargin" id="service">
-    <div class="col-md-6 nopadding nomargin service-news" id="news">
+    <div class="col-md-6 col-sm-6 nopadding nomargin service-news" id="news">
         <div class="s-news-content">
             <h3>Aktuality</h3>
             <ul>

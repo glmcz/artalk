@@ -9,7 +9,7 @@
 
 
 <div class="row">
-    <div class="col-md-12 recent-header norightpadding">
+    <div class="col-md-12 col-xs-12 recent-header norightpadding">
         <div class="col-md-6 noleftpadding">
             <h5>Nejnovější komentáře</h5>
         </div>
@@ -17,10 +17,10 @@
             <h5>Nejčtenější články</h5>
         </div>
     </div>
-    <div class="col-md-6 side-recent-item">
+    <div class="col-md-6  col-xs-12 side-recent-item">
         <?php bg_recent_comments(); ?>
     </div>
-    <div class="col-md-6 side-recent-item left-border">
+    <div class="col-md-6 col-xs-12 side-recent-item left-border">
         <?php bg_popular_post(); ?>
     </div>
 </div>
