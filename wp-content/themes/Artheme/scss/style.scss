@@ -2440,6 +2440,136 @@ Artheme social button
 .no-margin{
   padding-left: 0px;
 }
+/* Single page layout */
+.no-margin{
+  padding-left: 0px;
+}
+
+.col_9_padding_single_right{
+  padding-right: 10px;
+  padding-left: 0px;
+}
+
+.col_9_padding_single_right img {
+  height: auto;
+  max-width: 134%;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+.no-padding-left{
+  padding-left: 0px;
+}
+
+
+/* Artheme comments */
+
+.links time{
+  color: black;
+}
+.comment-reply-link{
+  color: black;
+}
+//#respond {
+//  background: #ececec;
+//  padding:0 5px 0 5px;
+//}
+
+/* Highlight active form field */
+#respond input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+
+  border: 1px solid #DDDDDD;
+}
+#comment{
+  width: 100%;
+}
+#email-notes{
+  display: none;
+}
+#reply-title{
+  background-color: lightgrey;
+  padding: 5px;
+  margin-bottom: 50px;
+
+  font-size: small;
+
+}
+.comment-reply-title{
+  background-color: grey;
+  padding: 5px;
+  margin-bottom: 50px;
+}
+
+.comment-respond{
+  padding: 0px;
+}
+.comment-notes{
+  display: none;
+}
+.comment-form-comment label{
+  display: none;
+}
+.form-submit .submit{
+  //width: 238px;
+  width: 31%;
+
+}
+.commentlist{
+  padding-left: 0px;
+}
+//#respond input[type=text]:focus, textarea:focus {
+//  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+//  margin: 0px 1px 3px 0px;
+//  border: 1px solid rgba(81, 203, 238, 1);
+//}
+
+#respond .comment-form-author label,
+#respond .comment-form-email label,
+#respond .comment-form-url label,
+#respond .comment-form-age label
+{
+  background: #eee;
+  -webkit-box-shadow: 1px 2px 2px rgba(204,204,204,0.8);
+  -moz-box-shadow: 1px 2px 2px rgba(204,204,204,0.8);
+  box-shadow: 1px 2px 2px rgba(204,204,204,0.8);
+  color: #555;
+  display: inline-block;
+  font-size: 13px;
+  left: 4px;
+  min-width: 60px;
+  padding: 4px 10px;
+  position: relative;
+  top: 40px;
+  z-index: 1;
+}
+
+.comments-area{
+  padding-left: 0px;
+}
+.comments-title{
+  background-color: black;
+  color: white;
+
+}
+.comments-title p {
+  padding: 5px;
+}
+.commented-list{
+  list-style-type: none;
+  margin-top: 20px;
+  border-bottom: 1px solid black;
+}
+.commented-list:last-child{
+  border-bottom: none;
+}
+
+/*
+Artheme citate collum
+ */
 
 .col_9_padding_single_right{
   padding-right: 10px;
@@ -2488,6 +2618,8 @@ Artheme social button
 .comment_author_bio{
   padding-left: 5px;
   list-style-type: none ;
+.col_3_padding_single_left{
+  padding-left: 0px;
 }
 .comment_author_bio li a{
  color: black;
@@ -3120,47 +3252,74 @@ Feature Box
 
 /* Artheme author list */
 
-.authors-letter-line {
-  background-color: $ArtBlack;
-  font-size: 1.8em;
-  color: #fff;
-  display:table;
-  /*width:100%;*/
-  /*TO DO*/
-  width: 1170px;
-}
-.authors-list-row {
-  -moz-column-width: 25em;
-  -webkit-column-width: 25em;
-  -moz-column-gap: 1em;
-  -webkit-column-gap:1em;
-}
+  authors-letter-line {
+    background-color: $ArtBlack;
+    font-size: 1.8em;
+    color: #fff;
+    display:table;
+    /*width:100%;*/
+    /*TO DO*/
+    width: 1170px;
+  }
+  .authors-list-row {
+    -moz-column-width: 25em;
+    -webkit-column-width: 25em;
+    -moz-column-gap: 1em;
+    -webkit-column-gap:1em;
+  }
 
-.authors-list-row > .col-md-4 {
-  display: inline-block;
-  padding:  .33rem;
-  width:  100%;
-  float:none;
-  border-right: 1px solid #000;
-}
-.authors-letter-line > a {
-  color: #fff;
-  display:table-cell;
-  text-align:center;
-  /*padding-left: 10px;*/
-}
-.authors-list-single {
-  color: $ArtBlack;
-  /*padding-left: 10px;*/
-}
-authors-list-single-text {
-  text-align: left;
-  color: $ArtBlack;
-}
-.authors-list-single-text a {
-  color: $ArtBlack;
-}
-.authors-list-single-text H1{
-  font-size: 1.6em;
-  /*padding-left: 10px;*/
-}
+  .authors-list-row > .col-md-4 {
+    display: inline-block;
+    padding:  .33rem;
+    width:  100%;
+    float:none;
+    border-right: 1px solid #000;
+  }
+  .authors-letter-line > a {
+    color: #fff;
+    display:table-cell;
+    text-align:center;
+    /*padding-left: 10px;*/
+  }
+  .authors-list-single {
+    color: $ArtBlack;
+    /*padding-left: 10px;*/
+  }
+  authors-list-single-text {
+    text-align: left;
+    color: $ArtBlack;
+  }
+  .authors-list-single-text a {
+    color: $ArtBlack;
+  }
+  .authors-list-single-text H1{
+    font-size: 1.6em;
+    /*padding-left: 10px;*/
+  }
+  .single-tags-container {
+    background-color: #D1D1D1;
+  }
+  .single-tags-tag {
+    color: $ArtBlack;
+    display: inline-block;
+    background-color: #D1D1D1;
+    border-left: 1px solid $ArtInnerColor;
+    font-size: 12px;
+    padding: 8px 6px 4px 6px;
+  }
+  .single-tags-tag:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid $ArtInnerColor;
+    margin-top: 16px;
+  }
+  .single-tags-tag a {
+    color: $ArtBlack;
+    line-height: 1em;
+  }
+  .single-tags-tag a:hover {
+    color: $ArtPink;
+  }
