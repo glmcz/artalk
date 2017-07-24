@@ -58,19 +58,14 @@
 //				var_dump(
 //					$xpath->evaluate('string(a)')
 //				);
-                if (have_posts()) : while (have_posts()) : the_post();
-				$c = get_the_content_with_formatting();
-//                echo $c;
-				$html = "";
-				// Create DOM from string
-				$html = str_get_html($c);
+
 //				foreach($html->find(' a [href=#_ftnref1] ') as $element) {
 //					echo $element->parent () . '<br>';
 //				}
 
 //               !!!!!!!!!!!!!!!dostaneme citace pod clankem
-				foreach($html->find(' * [href^=#_ftnref] ') as $element) {
-					echo $element->parent () . '<br>';
+//				foreach($html->find(' * [href^=#_ftnref] ') as $element) {
+//					echo $element->parent () . '<br>';
 
 //				 $ftn = $element->parent ();
 //                    foreach($ftn->find(' * [href^=#_ftnref]') as $eleme) {
@@ -78,22 +73,10 @@
 //	                    echo $eleme->parent() . '<br>';
 //                    }
 //
-				}
+//				}
 
-				$int = 2;
-//				!!!!!!!!!!!!!!!!!!!!!!!!!! anchors from text content
-				foreach ($html->find('p a[name^=_ftn]') as $el) {
-//				    echo "aa";
-//				    echo $el;
-					$a = str_get_html( $el );
-//				    echo $a;
+
 //
-					foreach ( $a->find( 'a[name^=_ftnref]' ) as $no ) {
-//						echo "naaaaaaae";
-						echo $no->outertext;
-
-					}
-				}
 //                    echo $el - $no;
 //                    echo $end = str_replace($el, '', $no).'<br>';
 //                    foreach (($end) as $n){
@@ -161,7 +144,7 @@
 //					}
 //				}
 
-
+				if (have_posts()) : while (have_posts()) : the_post();
 				?>
 
 
@@ -177,9 +160,43 @@
 
 
                 <div class="col-md-9 col_9_padding_single_right">
-					<?php the_content();
-                    // echo get_the_content_with_formatting();
-//					the_content();
+					<?php
+					$c = get_the_content_with_formatting();
+					//                echo $c;
+					$html = "";
+					// Create DOM from string
+					$html = str_get_html($c);
+					//global
+					$citate_string = "";
+//					find citate text under post
+                    $val = array();
+					foreach($html->find(' * [href^=#_ftnref] ') as $element) {
+						echo $element->parent() . '<br>';
+						$val[] = $element->parent(); //array push nefunguje
+
+					}
+//					!!!!!!!!!!!!!!!!!!!!!!!!!! anchors from text content
+
+                    foreach ($html->find('p a[name^=_ftn]') as $el) {
+                        $a = str_get_html( $el );
+                        foreach ( $a->find( 'a[name^=_ftnref]' ) as $no ) {
+
+                            echo $no->outertext;
+                            $citate_string = $citate_string . $no->outertext;
+	                        echo "sem dat text z citaci a potom je vycentrovat bokem vedle";
+
+                        }
+                    }
+//
+//                  deleted matched citate text under post
+					$cont = "";
+					for ($i = 0; $i < count($val);$i++){
+					$cont = get_the_content_with_formatting($val[$i],$cont,"","","") ;
+//                    echo $val[$i];
+//                    echo "vvv";
+//the_content();
+                    }
+                    echo $cont;
 
 					?>
                     <!--	              --><?php

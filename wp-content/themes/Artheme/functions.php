@@ -78,20 +78,30 @@
 //	return $the_content;
 //}
 //add_filter('the_content', 'my_image_replacement', 11);
-include_once ('simple_html_dom.php');
-add_image_size('lrg-hdr', 1170, 544, true);
-add_image_size('med-hdr', 750, 400, true);
-add_image_size('sml-hdr', 500, 325, true);
+
+//add_image_size('lrg-hdr', 1170, 544, true);
+//add_image_size('med-hdr', 750, 400, true);
+//add_image_size('sml-hdr', 500, 325, true);
+add_image_size('size-full', 900, 600, true);
 add_action( 'after_setup_theme', 'artalk_theme_init', 10 );
 
-function get_the_content_with_formatting ($more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
-	$content = get_the_content($more_link_text, $stripteaser, $more_file);
-	$content = apply_filters('the_content', $content);
-	$content = str_replace(']]>', ']]&gt;', $content);
-	return $content;
+function get_the_content_with_formatting ($citate='', $ref_content='', $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+	if($ref_content == ''){
+		$content = get_the_content($more_link_text, $stripteaser, $more_file);
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		$content = str_replace($citate, "",$content);
+		return $content;
+	}
+	else {
+		$content = $ref_content;
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		$content = str_replace($citate, "",$content);
+		return $content;
+	}
 }
 function artalk_theme_init() {
-
 
 	/* INIT */
 	include_once('functions/init.php');
@@ -104,6 +114,9 @@ function artalk_theme_init() {
 
     /* RECENT ITEMS */
     include_once('functions/recent-items.php');
+
+	/* CITACE  */
+	include_once ('simple_html_dom.php');
 
 	/* MEDIA */
 	//include_once('functions/media.php');
