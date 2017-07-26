@@ -35,26 +35,25 @@
                 </div>
 
                 <div class="col-md-3 col_3_padding_single_left">
-                    <div class="tags">
-						<?php
+                    <div class="single-tags-container">
+                        <?php
 
-						$terms =wp_get_post_tags($post->ID);
-						//                   echo '<p>';
-						foreach($terms as $term) {
+                        $terms =wp_get_post_tags($post->ID);
+                        //                   echo '<p>';
+                        foreach($terms as $term) {
 
-							//                            echo $term->name; //the output
-							//                            echo get_tag_link($term->term_id);
-							echo '<span class="tagbox"><a class="taglink" href="'. get_tag_link($term->term_id) .'">'. $term->name . '</a></span>' . "\n"   ;
-							//                            echo $string .= '<span class="tagbox"><a class="taglink" href="'. get_tag_link($tag->term_id) .'">'. $tag->name . '</a></span>' . "\n"   ;
+                            //                            echo $term->name; //the output
+                            //                            echo get_tag_link($term->term_id);
+                            echo '<span class="single-tags-tag"><a class="taglink" href="'. get_tag_link($term->term_id) .'">'. $term->name . '</a></span>';
+                            //                            echo $string .= '<span class="tagbox"><a class="taglink" href="'. get_tag_link($tag->term_id) .'">'. $tag->name . '</a></span>' . "\n"   ;
 
-						}
-						//                    echo '</p>';
-						//  the_tags('', '' ,'' ); ?>
+                        }
+                        //                    echo '</p>';
+                        //  the_tags('', '' ,'' ); ?>
                     </div>
-					<?php
-					do_action( 'side_matter_list_notes' );
-					?>
-
+                    <?php
+                    do_action( 'side_matter_list_notes' );
+                    ?>
                 </div>
 
             </div>
