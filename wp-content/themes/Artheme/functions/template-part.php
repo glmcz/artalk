@@ -271,7 +271,6 @@ function wp_author_info_box() {
 			}
 		}
 
-
 /**
  * Get authors
  *
@@ -279,8 +278,9 @@ function wp_author_info_box() {
  * @param $args Array
  * @return $authors Array
  */
-function artalk_get_authors( $args = '' ) {
+function artalk_get_authors( $args = '', $letter = '') {
     global $wpdb;
+    $letter = get_query_var( 'c' );
     $defaults = array(
         'orderby'       => array('post_count' => 'DESC', 'name' => 'ASC'), // irelevant see usort below
         'number'        => '',
@@ -306,10 +306,18 @@ function artalk_get_authors( $args = '' ) {
     }
     // sort by last name
     usort($authors, create_function('$a, $b', 'return strnatcasecmp(remove_accents($a->last_name), remove_accents($b->last_name));'));
+    //echo $authors->data->display_name;
+
+    //echo $filtered = array_filter($array, create_function('$a', 'return $a[0] == "' . $letter . '";'));
+    $authors= array_filter($authors, create_function('$a', 'return remove_accents(end((explode(\' \',$a->data->display_name))))[0] == "' . $letter . '";'));
+    //array_filter($authors, 'GetNamesByLetter use($that)');
     return $authors;
+    //var_dump($authors);
 }
+
+
 function author_letter_line() {
     foreach (range('A', 'Z') as $char) {
-        echo '<a>'.$char . " ".'</a>';
+        echo '<a href="'.esc_url( add_query_arg( 'c', $char ) ).'">'.$char . " ".'</a>';
     }
 }

@@ -331,3 +331,9 @@ function get_the_content_with_formatting_replace ($citate='' , $replace,  $ref_c
 //add_theme_support( 'post-thumbnails' );
 remove_filter( 'the_content', 'wp_make_content_images_responsive' );
 
+function add_custom_query_var( $vars ){
+    $vars[] = "c";
+    return $vars;
+}
+add_filter( 'query_vars', 'add_custom_query_var' );
+

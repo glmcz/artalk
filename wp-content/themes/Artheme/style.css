@@ -2176,7 +2176,7 @@ Artheme citate collum
   -khtml-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  width: 500; }
+  width: 500px; }
 
 .wp-caption img {
   margin: 0;
@@ -2627,7 +2627,7 @@ Feature Box
   width: 390px; }
 
 /* Artheme author list */
-authors-letter-line {
+.authors-letter-line {
   background-color: #212121;
   font-size: 1.8em;
   color: #fff;
