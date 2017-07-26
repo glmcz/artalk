@@ -422,7 +422,7 @@ a:focus {
 }
 
 a:focus {
-  outline: thin dotted;
+  outline: thin dotted ;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2382,15 +2382,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 Artheme social button
  */
 #header_icons img {
-
   float:left;
-
   height:32px;
-
   width:32px;
-
-  margin:0;
-
+  margin: 0px;
   margin-left:10px;
 
 }
@@ -2615,9 +2610,10 @@ Artheme citate collum
 
 /* Artheme comments */
 
-.comment_author_bio{
+.comment_author_bio {
   padding-left: 5px;
-  list-style-type: none ;
+  list-style-type: none;
+}
 .col_3_padding_single_left{
   padding-left: 0px;
 }
@@ -2735,6 +2731,12 @@ Artheme citate collum
 .col_3_padding_single_left{
   padding-left: 0px;
 }
+.citate_left{
+    position: absolute;
+    left: 100%;
+    width: 191.25px;
+}
+
 
 /*
 Artheme tags
@@ -2865,8 +2867,8 @@ Artheme author widget
 }
 
 .author_details img {
-  border: 1px solid #D8D8D8;
-  border-radius: 50%;
+  //border: 1px solid #D8D8D8;
+  //border-radius: 50%;
   float: left;
   margin: 0 15px 10px 0;
 }

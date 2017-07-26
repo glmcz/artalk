@@ -185,8 +185,6 @@ function short_title_text($text, $after = '', $length) {
 	return $mytitle;
 }
 
-
-
 function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args)
 {
 	$headers = @get_headers( $args['url'] );
@@ -197,7 +195,72 @@ function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args)
 }
 add_filter('get_avatar','ns_filter_avatar', 10, 6);
 
+function the_contents(){
+	$html = "";
+	// Create DOM from string
+	$html = str_get_html(get_the_content_without_citate());
+	//global
+	$arr_citate_under_text = array();
+	$arr_citate_anchors    = array();
+	$arr_citate_replace    = array();
+	$cont                  = "";
+	if($html->find(' * [href^=#_ftnref] ')){
+	//	                    find citate text under post
+		foreach($html->find(' * [href^=#_ftnref] ') as $element) {
+			$arr_citate_under_text[] = $element->parent();
+		}
+		//					anchors from text content
+		foreach ($html->find('p a[name^=_ftn]') as $el) {
+			$a = str_get_html( $el );
+			foreach ( $a->find( 'a[name^=_ftnref]' ) as $link ) {
+				$arr_citate_anchors[] = $link->outertext;
+			}
+		}
+		for ($i = 0; $i < count($arr_citate_under_text);$i++){
+			$arr_citate_replace[$i] = $arr_citate_anchors[$i] . '<div class="citate_left">' . $arr_citate_under_text[$i] . '</div>' ;
+			//						deleted matched citate text under post
+			$cont = get_the_content_without_citate($arr_citate_under_text[$i], $cont,"","","");
+			//						moved citate text under post behind anchors in text
+			$cont = get_the_content_with_formatting_replace($arr_citate_anchors[$i], $arr_citate_replace[$i], $cont,"","","");
+		}
+		echo $cont;
+	}else {
+		the_content();
+	}
+}
 
+function get_the_content_without_citate ($citate='', $ref_content='', $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+	if($ref_content == ''){
+		$content = get_the_content($more_link_text, $stripteaser, $more_file);
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		$content = str_replace($citate, '' ,$content);
+		return $content;
+	}
+	else {
+		$content = $ref_content;
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		$content = str_replace($citate, '' ,$content);
+		return $content;
+	}
+}
+function get_the_content_with_formatting_replace ($citate='' , $replace,  $ref_content='', $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+	if($ref_content == ''){
+		$content = get_the_content($more_link_text, $stripteaser, $more_file);
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		$content = str_replace($citate, $replace ,$content);
+		return $content;
+	}
+	else {
+		$content = $ref_content;
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		$content = str_replace($citate, $replace ,$content);
+		return $content;
+	}
+}
 
 
 //function get_the_content_reformatted ($var, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
@@ -261,9 +324,10 @@ add_filter('get_avatar','ns_filter_avatar', 10, 6);
 
 //apply_filters('the_content',get_the_content()) ;
 
-function filter_images($content){
-	return preg_replace('/<img (.*) \/>\s*/iU', '<div class="col-md-12 responsive"><img \1 /></div>', $content);
-}
-add_filter('the_content', 'filter_images');
+//function filter_images($content){
+//	return preg_replace('/<img (.*) \/>\s*/iU', '<div class="col-md-12 responsive"><img \1 /></div>', $content);
+//}
+//add_filter('the_content', 'filter_images');
 //add_theme_support( 'post-thumbnails' );
 remove_filter( 'the_content', 'wp_make_content_images_responsive' );
+
