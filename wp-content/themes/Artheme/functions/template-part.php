@@ -280,7 +280,7 @@ function wp_author_info_box() {
  */
 function artalk_get_authors( $args = '', $letter = '') {
     global $wpdb;
-    $letter = get_query_var( 'c' );
+    $letter = (get_query_var( 'c' ) == ''? 'A':get_query_var( 'c' ) );
     $defaults = array(
         'orderby'       => array('post_count' => 'DESC', 'name' => 'ASC'), // irelevant see usort below
         'number'        => '',
@@ -320,4 +320,19 @@ function author_letter_line() {
     foreach (range('A', 'Z') as $char) {
         echo '<a href="'.esc_url( add_query_arg( 'c', $char ) ).'">'.$char . " ".'</a>';
     }
+}
+/**
+ * Return author awatar if exists
+ *
+ * @see wp_list_authors()
+ * @param $author Object
+ * @return $content Html image or blank frame
+ */
+function artalk_awatar($authorID) {
+    //var_dump(get_avatar($authorID));
+    $content ='<div class="author-list-awatar '.(get_avatar($authorID) !== false? 'author-list-awatar-empty':'').'">';
+    $content .= get_avatar($authorID , 200 ,'403',null, array('class' => array('img-responsive') )) ;
+    $content .='</div>';
+    return $content;
+
 }

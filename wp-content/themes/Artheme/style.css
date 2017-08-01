@@ -2655,8 +2655,12 @@ Feature Box
   text-align: center;
   /*padding-left: 10px;*/ }
 
+.authors-letter-line a:hover {
+  color: #fb026a; }
+
 .authors-list-single {
   color: #212121;
+  border-bottom: 1px solid #212121;
   /*padding-left: 10px;*/ }
 
 authors-list-single-text {
@@ -2666,9 +2670,21 @@ authors-list-single-text {
 .authors-list-single-text a {
   color: #212121; }
 
+.authors-list-single-text a:hover {
+  color: #fb026a; }
+
 .authors-list-single-text H1 {
   font-size: 1.6em;
   /*padding-left: 10px;*/ }
+
+.author-list-awatar {
+  width: 150px;
+  height: 160px;
+  margin: 0px 10px 10px 0;
+  float: left; }
+
+.author-list-awatar-empty {
+  border: 1px solid #212121; }
 
 .single-tags-container {
   background-color: #D1D1D1; }

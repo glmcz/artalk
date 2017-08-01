@@ -23,21 +23,15 @@ get_header();
 
 					<div class="col-md-4">
 						<div class="authors-list-single">
-							<div class="columns small-12 medium-3">
-								<?php /*if ( $avatar = artalk_avatar($author->ID, $avatar_size, false) ) :*/?>
-									<a class="thumb-link author-image" href="<?php the_permalink(); ?>">
-										<?php /*echo $avatar; */?>
-									</a>
-								<?php /*endif; */?>
-							</div>
 							<div class="authors-list-single-text">
 								<h1><a href="<?php echo esc_url(get_author_posts_url($author->ID)); ?>" ><?php esc_html_e($author->data->display_name);?></a></h1>
 								<div class="content bio">
+                                    <?php echo artalk_awatar($author->ID); ?>
 									<?php echo esc_html($bio); ?>
 								</div>
-                            <?php
-                            $user_posts = get_author_posts_url(  $author->ID);
-                            echo '<a class="widget_single" href="'. $user_posts .'">Další články autora</a>'; ?>
+<!--                            --><?php
+/*                            $user_posts = get_author_posts_url(  $author->ID);
+                            echo '<a class="widget_single" href="'. $user_posts .'">Další články autora</a>'; */?>
 							</div>
 						</div>
 					</div>

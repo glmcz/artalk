@@ -3283,8 +3283,13 @@ Feature Box
     text-align:center;
     /*padding-left: 10px;*/
   }
+  .authors-letter-line a:hover {
+     color: $ArtPink;
+   }
+
   .authors-list-single {
     color: $ArtBlack;
+    border-bottom: 1px solid $ArtBlack;
     /*padding-left: 10px;*/
   }
   authors-list-single-text {
@@ -3294,9 +3299,23 @@ Feature Box
   .authors-list-single-text a {
     color: $ArtBlack;
   }
+.authors-list-single-text a:hover {
+  color: $ArtPink;
+}
   .authors-list-single-text H1{
     font-size: 1.6em;
     /*padding-left: 10px;*/
+  }
+  .author-list-awatar {
+    width: 150px;
+    height: 150px;
+    margin: 0px 10px 10px 0;
+    float: left;
+
+  }
+  .author-list-awatar-empty {
+    //width: 100%;
+    border: 1px solid $ArtBlack;
   }
   .single-tags-container {
     background-color: #D1D1D1;
