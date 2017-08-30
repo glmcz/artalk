@@ -129,7 +129,8 @@ function artalk_feature() {
         $featured .='</footer>';
         if( has_post_thumbnail() ){
             $featured .= '<div class="featured-img"><a href="'. get_permalink() .'" />';
-            $featured .= get_the_post_thumbnail(get_the_ID(),'featured',array( 'class' => 'img-responsive' ));
+            ///$featured .= get_the_post_thumbnail(get_the_ID(),'featured',array( 'class' => 'img-responsive' ));
+            //$featured .= fly_get_attachment_image( get_post_thumbnail_id(), array( 585, 416 ), true );
             $featured .= '</a></div>';
         }else{
             $featured .='neni nahled';

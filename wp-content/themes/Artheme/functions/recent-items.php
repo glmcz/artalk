@@ -8,10 +8,11 @@
 function bg_recent_comments($no_comments = 5, $comment_len = 30, $avatar_size = 48) {
     $comments_query = new WP_Comment_Query();
     $comments = $comments_query->query( array( 'number' => $no_comments ) );
-    $comm = '';
+    $comm = '<ul class="recent-comments">';
     if ( $comments ) : foreach ( $comments as $comment ) :
-        $comm .= '<li><strong>&#9679; '.$comment->comment_author.'</strong>:';
-        $comm .= '<a class="author" href="' . get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID . '">';
+        $comm .= '<li class="bott-border"><a class="recent-comments-post xs-top-margin" href="' . get_permalink( $comment->comment_post_ID ). '">&#9679; '.$comment->post_title.'</a>';
+        $comm .= ''.$comment->comment_author.': ';
+        $comm .= '<a class="recent-comments-excerpt" href="' . get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID . '">';
         $comm .= wp_trim_words( $comment->comment_content , $num_words = 8, $more = '… ' ). '</a></li>';
         //$comm .= '<li><a class="author" href="' . get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID . '">';
         //$comm .= $comment->post_title . '</a> ';
@@ -19,13 +20,14 @@ function bg_recent_comments($no_comments = 5, $comment_len = 30, $avatar_size = 
     endforeach; else :
         $comm .= 'No comments.';
     endif;
+    $comm .= '</ul>';
     echo $comm;
 }
 
 function bg_popular_post($no_posts = 5, $comment_len = 30) {
     $ppost ='';
     //$popular = new WP_Query(array('posts_per_page'=>1, 'meta_key'=>'popular_posts', 'orderby'=>'meta_value_num', 'order'=>'DESC'));
-    $args = array('post_type' => 'post', 'posts_per_page' => 10, 'meta_key' => 'popular_posts', 'orderby' => 'meta_value_num','order' => 'DESC' );
+    $args = array('post_type' => 'post', 'posts_per_page' => 6, 'meta_key' => 'popular_posts', 'orderby' => 'meta_value_num','order' => 'DESC' );
     //$args = array('meta_key'=>'popular_posts');
 /*    $args = array(
         'posts_per_page' => 5,
@@ -47,7 +49,7 @@ function bg_popular_post($no_posts = 5, $comment_len = 30) {
     //var_dump($popular);
     $ppost.='<ul>';
     foreach ( $popular as $post ) : setup_postdata( $post );
-        $ppost.= '<li class="twice-sm"><a href="'.get_permalink().'" title="'.get_the_title(false).'">&#9679; '.$post->post_title.'</a></li>';
+        $ppost.= '<li class="twice-sm bott-border"><a class="xs-top-margin" href="'.get_permalink().'" title="'.get_the_title(false).'">&#9679; '.$post->post_title.'</a></li>';
 
     endforeach;
     $ppost.='</ul>';

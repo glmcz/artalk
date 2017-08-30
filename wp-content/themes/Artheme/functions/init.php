@@ -20,9 +20,9 @@
     add_action( 'widgets_init', 'artalk_widgets_init' );
     function artalk_widgets_init() {
       register_sidebar( array(
-      'name'         => __('Sidebar 1st half','artalk'),
+      'name'         => __('Sidebar 1st part','artalk'),
       'id'           => 'sidebar-1',
-      'description'  => __('Widgets in this area will be shown on first half of page on all posts and pages.','artalk'),
+      'description'  => __('Widgets in this area will be shown on first part of page on all posts and pages.','artalk'),
       'before_title' => '<h3>',
       'after_title'  => '</h3>',
       'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -33,9 +33,9 @@
 add_action( 'widgets_init', 'artalk_widgets_init02' );
 function artalk_widgets_init02() {
     register_sidebar( array(
-        'name'         => __('Sidebar 2nd half','artalk'),
+        'name'         => __('Sidebar 2nd part','artalk'),
         'id'           => 'sidebar-2',
-        'description'  => __('Widgets in this area will be shown on second half of page on all posts and pages.','artalk'),
+        'description'  => __('Widgets in this area will be shown on second pard of page on all posts and pages.','artalk'),
         'before_title' => '<h3>',
         'after_title'  => '</h3>',
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -53,6 +53,19 @@ function artalk_widgets_init03() {
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
     ) );
+}
+add_action( 'widgets_init', 'artalk_widgets_init04' );
+function artalk_widgets_init04()
+{
+    register_sidebar(array(
+        'name' => __('Sidebar 3rd part', 'artalk'),
+        'id' => 'sidebar-3',
+        'description' => __('Widgets in this area will be shown on third part of page on all posts and pages.', 'artalk'),
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+    ));
 }
 
 
@@ -137,7 +150,7 @@ function artalk_widgets_init03() {
   add_filter( 'excerpt_length', 'artalk_excerpt_length', 99 );
   add_filter( 'excerpt_more', 'artalk_excerpt_more' );
   function artalk_excerpt_length() {
-    return 18;
+    return 17;
   }
   function artalk_excerpt_more() {
     return ' ...';

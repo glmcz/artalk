@@ -1,9 +1,8 @@
-@charset "UTF-8";
 /*
-Theme Name:Artheme2016
+Theme Name:Artheme
 Theme URI: http://www.artalk.cz
 Description: Artheme for artalk
-Author: Filip Uhl├ş┼Ö
+Author: Filip Uhlir
 Author URI: http://www.teapot.cz
 Tags: 3 column theme, red, blue, magazine
 /*!
@@ -2390,12 +2389,27 @@ Artheme author widget
   .post-meta-single .post-categories {
     padding-left: 0; }
 
-.post {
-  margin-bottom: 24px;
-  min-height: 367px;
+.post, .post-category {
   border-bottom: 1px solid #212121; }
-  .post footer a {
+  .post a, .post-category a {
+    color: #212121;
+    text-decoration: underline; }
+    .post a:hover, .post-category a:hover {
+      color: #fb026a; }
+  .post footer a, .post-category footer a {
+    text-decoration: none;
     color: #212121; }
+    .post footer a:hover, .post-category footer a:hover {
+      color: #212121;
+      text-decoration: underline; }
+
+.post-content {
+  margin-bottom: 24px;
+  min-height: 378px; }
+
+.post-category-content {
+  margin-bottom: 24px;
+  min-height: 270px; }
 
 .image_container {
   padding-bottom: 10px; }
@@ -2405,8 +2419,9 @@ Artheme author widget
   height: 2em;
   font-size: 1.3em; }
   .post-title:active, .post-title:visited, .post-title:focus {
-    color: #44628a; }
+    color: #212121; }
   .post-title a {
+    text-decoration: none;
     color: #212121; }
     .post-title a:hover {
       color: #fb026a; }
@@ -2513,7 +2528,7 @@ Artheme author widget
   height: 100%;
   border-left: 1px solid black; }
   .service-photoreport .s-photoreport-content {
-    padding: 10px; }
+    padding: 10px 0px 10px 10px; }
     .service-photoreport .s-photoreport-content .photo-article {
       margin-bottom: 20px; }
       .service-photoreport .s-photoreport-content .photo-article img {
@@ -2536,7 +2551,7 @@ Sidebar
 */
 .recent-header {
   text-align: left;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   height: 34px;
   background-color: #212121; }
   .recent-header h5 {
@@ -2551,14 +2566,22 @@ Sidebar
   .side-recent-item a {
     color: #212121;
     display: inline-block; }
+  .side-recent-item a:hover {
+    color: #fb026a; }
   .side-recent-item ul {
     list-style: none;
     padding-left: 0px; }
   .side-recent-item li {
-    height: 96px;
+    height: 86px;
     padding-bottom: 5px; }
   .side-recent-item .twice-sm {
-    height: 48px; }
+    height: 57.33333px; }
+
+.recent-comments .recent-comments-post {
+  display: block;
+  font-weight: bold; }
+.recent-comments .recent-comments-excerpt {
+  display: inline; }
 
 /* Media artalk service part */
 .media_li a {
@@ -2574,15 +2597,21 @@ Utils
 .bott-border {
   border-bottom: 1px solid #212121; }
 
+.xs-top-margin {
+  margin-top: 4px; }
+
 /*
 Feature Box
 */
 .featured {
   height: 530px; }
   .featured h2 {
-    margin-top: 10px; }
+    margin-top: 10px;
+    font-size: 24px; }
   .featured a {
     color: #212121; }
+  .featured a:hover {
+    color: #fb026a; }
   .featured ul {
     display: inline-block;
     padding-left: 5px; }
@@ -2679,7 +2708,7 @@ authors-list-single-text {
 
 .author-list-awatar {
   width: 150px;
-  height: 160px;
+  height: 150px;
   margin: 0px 10px 10px 0;
   float: left; }
 

@@ -21,14 +21,6 @@
             <a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                 <?php do_action('artalk_logo'); ?>
             </a>
-            <?php
-                if ( is_home() ) {
-                    echo (artalk_get_current_category());
-                } else
-                {
-                     echo (artalk_get_current_category());
-                }
-                ?>
         </div>
         <nav class="navbar-art">
             <div class="container nopadding navbar-art-container">

@@ -6,16 +6,17 @@
  * Time: 11:04
  */
 ?>
-<?php if ( is_active_sidebar( 'featured-widget' ) ) : ?>
+<?php //if ( is_active_sidebar( 'featured-widget' ) ) : ?>
 
     <div class="col-md-6 nopadding nomargin" id="featured">
 
         <?php
-//            do_action(artalk_feature());
 
-//            dynamic_sidebar( 'featured-widget' );
+
+            dynamic_sidebar( 'featured-widget' );
+            do_action(artalk_feature());
         ?>
 
     </div>
 
-<?php endif; ?>
+<?php //endif; ?>

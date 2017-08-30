@@ -1,8 +1,8 @@
 /*
-Theme Name:Artheme2016
+Theme Name:Artheme
 Theme URI: http://www.artalk.cz
 Description: Artheme for artalk
-Author: Filip Uhlíř
+Author: Filip Uhlir
 Author URI: http://www.teapot.cz
 Tags: 3 column theme, red, blue, magazine
 /*!
@@ -2918,16 +2918,36 @@ Artheme author widget
   }
 }
 
-.post {
-  margin-bottom: 24px;
-  min-height: 367px;
+
+.post, .post-category{
   border-bottom: 1px solid $ArtBlack;
+  a {
+    color: $ArtBlack;
+    text-decoration: underline;
+    &:hover {
+      color: $ArtPink;
+    }
+  }
   footer {
 
     a {
+      text-decoration: none;
       color: $ArtBlack;
+      &:hover {
+        color: $ArtBlack;
+        text-decoration: underline;
+      }
     }
   }
+}
+.post-content {
+  margin-bottom: 24px;
+  min-height: 378px;
+}
+
+.post-category-content {
+  margin-bottom: 24px;
+  min-height: 270px;
 }
 .image_container{
   padding-bottom: 10px;
@@ -2946,6 +2966,7 @@ Artheme author widget
   }
 
   a {
+    text-decoration: none;
     color: $ArtBlack;
     &:hover {
       color: $ArtPink;
@@ -3100,7 +3121,7 @@ Artheme author widget
   height: 100%;
   border-left: 1px solid black;
   .s-photoreport-content {
-    padding: 10px;
+    padding: 10px 0px 10px 10px;
     .photo-article {
       margin-bottom: 20px;
       img {
@@ -3130,7 +3151,7 @@ Sidebar
 */
 .recent-header {
   text-align: left;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   height: 34px;
   background-color: $ArtBlack;
   h5 {
@@ -3141,7 +3162,7 @@ Sidebar
 }
 
 .side-recent-item {
-  $liHeight: 96px;
+  $liHeight: 86px;
   text-align: left;
   //list-style-position:inside;
   list-style: none;
@@ -3150,6 +3171,9 @@ Sidebar
   a {
     color: $ArtBlack;
     display: inline-block;
+  }
+  a:hover {
+    color: $ArtPink;
   }
   ul {
     list-style: none;
@@ -3160,10 +3184,18 @@ Sidebar
     padding-bottom: 5px;
   }
   .twice-sm {
-    height: $liHeight / 2;
+    height: $liHeight / 1.5;
   }
 }
-
+.recent-comments {
+  .recent-comments-post{
+    display: block;
+    font-weight: bold;
+  }
+  .recent-comments-excerpt {
+    display: inline;
+  }
+}
 /* Media artalk service part */
 .media_li a{
   padding: 10px 10px 10px 0px;
@@ -3181,7 +3213,9 @@ Utils
 .bott-border {
   border-bottom: 1px solid $ArtBlack;
 }
-
+.xs-top-margin {
+  margin-top: 4px;
+}
 /*
 Feature Box
 */
@@ -3189,9 +3223,13 @@ Feature Box
   height: 530px;
   h2 {
     margin-top: 10px;
+    font-size: 24px;
   }
   a {
     color: $ArtBlack;
+  }
+  a:hover {
+    color: $ArtPink;
   }
   ul {
     display: inline-block;

@@ -10,7 +10,8 @@
             $query = new WP_Query(array(
             'ignore_sticky_posts' => true,
             'paged' => $paged,
-            'posts_per_page' => 8
+            'posts_per_page' => 10,
+             'category_name' => 'arena',
             ));
         } else
         {
@@ -18,7 +19,7 @@
             'post_type' => 'post',
             'ignore_sticky_posts' => true,
             'paged' => $paged,
-            'posts_per_page' => 12,
+            'posts_per_page' => 14,
             'category_name' => artalk_get_current_category()
             ));
         }
